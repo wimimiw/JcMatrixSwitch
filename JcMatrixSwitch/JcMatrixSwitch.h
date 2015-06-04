@@ -38,13 +38,13 @@
 #define ID_SW11_SDT2        (11)  //开关类型11：操作范围<1~2>
 #define ID_SW12_SDT2        (12)  //开关类型12：操作范围<1~2>
 //POI模块地址
-#define IP_Signalswich  	(0)
-#define IP_Paspecumpwmt     (1)
-#define IP_Testmdcdmagsm    (2)
-#define IP_Testmdfdd18      (3)
-#define IP_Testmdfdd21      (4)
-#define IP_Testmdtdftda     (5)
-#define IP_Testmdtdd23      (6)
+#define IP_Signalswich  	(1)
+#define IP_Paspecumpwmt     (2)
+#define IP_Testmdcdmagsm    (3)
+#define IP_Testmdfdd18      (4)
+#define IP_Testmdfdd21      (5)
+#define IP_Testmdtdftda     (6)
+#define IP_Testmdtdd23      (7)
 //POI-TX1 通道
 #define ID_1Cmgsmtx1        (0)
 #define ID_2Cucdmatx1       (1)

@@ -170,7 +170,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//功放开关1
 	{
-		int x = 50, y = 50;
+		int x = 50, y = 100;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO7, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO8, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO9, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -179,7 +179,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//功放开关2
 	{
-		int x = 250, y = 50;
+		int x = 250, y = 100;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO11, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO12, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO13, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -188,7 +188,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//收信开关
 	{
-		int x = 50, y = 100;
+		int x = 50, y = 200;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO15, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO16, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO17, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -200,7 +200,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//检测开关
 	{
-		int x = 360, y = 100;
+		int x = 360, y = 200;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO22, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO23, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO24, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -212,42 +212,42 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 
 	{
-		int x = 50, y = 150;
+		int x = 50, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO29, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO30, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP7, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 150, y = 150;
+		int x = 150, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO31, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO32, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP8, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 250, y = 150;
+		int x = 250, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO33, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO34, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP9, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 350, y = 150;
+		int x = 350, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO35, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO36, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP10, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 450, y = 150;
+		int x = 450, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO37, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO38, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP11, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 550, y = 150;
+		int x = 550, y = 300;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO39, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO40, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP12, CRect(x + 10, y + 20, x + 100, y + 65), 0);
@@ -414,7 +414,7 @@ BOOL CJcMatrixSwitchDemoDlg::SwitchManual(int swId,int swIdx)
 
 	int i = m_cbbSwitch.GetCurSel();
 
-	MartrixSwitchExcute(i, swId, swIdx);
+	MartrixSwitchExcute(i+1, swId, swIdx);
 
 	return true;
 }
