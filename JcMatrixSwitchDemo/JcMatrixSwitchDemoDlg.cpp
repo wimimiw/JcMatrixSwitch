@@ -170,7 +170,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//功放开关1
 	{
-		int x = 50, y = 100;
+		int x = 50, y = 50;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO7, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO8, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO9, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -179,7 +179,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//功放开关2
 	{
-		int x = 250, y = 100;
+		int x = 250, y = 50;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO11, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO12, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO13, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -188,7 +188,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	}
 	//收信开关
 	{
-		int x = 50, y = 200;
+		int x = 50, y = 100;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO15, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO16, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO17, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -196,11 +196,11 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO19, CRect(x + 180, y + 40, x + 220, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO20, CRect(x + 220, y + 40, x + 260, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO21, CRect(x + 260, y + 40, x + 300, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 310, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP5, CRect(x + 10, y + 20, x + 310, y + 65), 0);
 	}
 	//检测开关
 	{
-		int x = 360, y = 200;
+		int x = 360, y = 100;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO22, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO23, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO24, CRect(x + 100, y + 40, x + 140, y + 60), 0);
@@ -208,49 +208,49 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO26, CRect(x + 180, y + 40, x + 220, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO27, CRect(x + 220, y + 40, x + 260, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO28, CRect(x + 260, y + 40, x + 300, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 310, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP6, CRect(x + 10, y + 20, x + 310, y + 65), 0);
 	}
 
 	{
-		int x = 50, y = 300;
+		int x = 50, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO29, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO30, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP7, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 150, y = 300;
+		int x = 150, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO31, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO32, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP8, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 250, y = 300;
+		int x = 250, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO33, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO34, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP9, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 350, y = 300;
+		int x = 350, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO35, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO36, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP10, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 450, y = 300;
+		int x = 450, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO37, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO38, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP11, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	{
-		int x = 550, y = 300;
+		int x = 550, y = 150;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO39, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO40, CRect(x + 60, y + 40, x + 100, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 100, y + 65), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP12, CRect(x + 10, y + 20, x + 100, y + 65), 0);
 	}
 
 	m_cbbSwitch.AddString(L"IP_Signalswich");
@@ -261,63 +261,78 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	m_cbbSwitch.AddString(L"IP_Testmdtdftda");
 	m_cbbSwitch.AddString(L"IP_Testmdtdd23");
 
-	m_ccbTx1.AddString(L"Cmgsmtx1 ");
-	m_ccbTx1.AddString(L"Cucdmatx1");
-	m_ccbTx1.AddString(L"Ctfd18tx1");
-	m_ccbTx1.AddString(L"Cufd18tx1");
-	m_ccbTx1.AddString(L"Ctfd21tx1");
-	m_ccbTx1.AddString(L"Cuw21tx1 ");
-	m_ccbTx1.AddString(L"Cmdcstx1 ");
-	m_ccbTx1.AddString(L"Cmtdftx1 ");
-    m_ccbTx1.AddString(L"Cmtdetx1");
-    m_ccbTx1.AddString(L"Cttdetx1");
+	m_cbbSwitch.SetCurSel(0);
+
+	m_ccbTx1.AddString(L"1Cmgsmtx1 ");
+	m_ccbTx1.AddString(L"2Cucdmatx1");
+	m_ccbTx1.AddString(L"3Ctfd18tx1");
+	m_ccbTx1.AddString(L"4Cufd18tx1");
+	m_ccbTx1.AddString(L"5Ctfd21tx1");
+	m_ccbTx1.AddString(L"6Cuw21tx1 ");
+	m_ccbTx1.AddString(L"7Cmdcstx1 ");
+	m_ccbTx1.AddString(L"8Cmtdftx1 ");
+	m_ccbTx1.AddString(L"9null");
+    m_ccbTx1.AddString(L"10Cmtdetx1");
+    m_ccbTx1.AddString(L"11Cttdetx1");
+
+	m_ccbTx1.SetCurSel(0);
 	
-	m_ccbTx2.AddString(L"Cmgsmtx2 ");
-	m_ccbTx2.AddString(L"Cucdmatx2");
-	m_ccbTx2.AddString(L"Ctfd18tx2");
-	m_ccbTx2.AddString(L"Cufd18tx2");
-	m_ccbTx2.AddString(L"Ctfd21tx2");
-	m_ccbTx2.AddString(L"Cuw21tx2 ");
-	m_ccbTx2.AddString(L"Cmdcstx2 ");
-	m_ccbTx2.AddString(L"Cmtdftx2 ");
-	m_ccbTx2.AddString(L"Cmtdatx2 ");
-	m_ccbTx2.AddString(L"Cmtdetx2");
-	m_ccbTx2.AddString(L"Cutdetx2");
+	m_ccbTx2.AddString(L"1Cmgsmtx2 ");
+	m_ccbTx2.AddString(L"2Cucdmatx2");
+	m_ccbTx2.AddString(L"3Ctfd18tx2");
+	m_ccbTx2.AddString(L"4Cufd18tx2");
+	m_ccbTx2.AddString(L"5Ctfd21tx2");
+	m_ccbTx2.AddString(L"6Cuw21tx2 ");
+	m_ccbTx2.AddString(L"7Cmdcstx2 ");
+	m_ccbTx2.AddString(L"8Cmtdftx2 ");
+	m_ccbTx2.AddString(L"9Cmtdatx2 ");
+	m_ccbTx2.AddString(L"10Cmtdetx2");
+	m_ccbTx2.AddString(L"11null");
+	m_ccbTx2.AddString(L"12Cutdetx2");
 
-	m_ccbPim.AddString(L"gsmpim    ");
-	m_ccbPim.AddString(L"cdmapim   ");
-	m_ccbPim.AddString(L"ctfd18pim ");
-	m_ccbPim.AddString(L"cufd18pim ");
-	m_ccbPim.AddString(L"ctfd21pim ");
-	m_ccbPim.AddString(L"cuw21pim  ");
-	m_ccbPim.AddString(L"cmdcspim  ");
-	m_ccbPim.AddString(L"cmtdfpim  ");
-	m_ccbPim.AddString(L"cmtde23pim");
-	m_ccbPim.AddString(L"cttde23pim");
+	m_ccbTx2.SetCurSel(0);
 
-	m_ccbDet.AddString(L"Cdmagsmcp1");
-	m_ccbDet.AddString(L"Cdmagsmcp2");
-	m_ccbDet.AddString(L"fdd18cp1  ");
-	m_ccbDet.AddString(L"fdd18cp2  ");
-	m_ccbDet.AddString(L"fdd21cp1  ");
-	m_ccbDet.AddString(L"fdd21cp2  ");
-	m_ccbDet.AddString(L"tdftdacp1 ");
-	m_ccbDet.AddString(L"tdftdacp2 ");
-	m_ccbDet.AddString(L"tdftdacp3 ");
-	m_ccbDet.AddString(L"tde23cp1  "); 
-	m_ccbDet.AddString(L"tde23cp2  ");
+	m_ccbPim.AddString(L"1gsmpim    ");
+	m_ccbPim.AddString(L"2cdmapim   ");
+	m_ccbPim.AddString(L"3ctfd18pim ");
+	m_ccbPim.AddString(L"4cufd18pim ");
+	m_ccbPim.AddString(L"5ctfd21pim ");
+	m_ccbPim.AddString(L"6cuw21pim  ");
+	m_ccbPim.AddString(L"7cmdcspim  ");
+	m_ccbPim.AddString(L"8cmtdfpim  ");
+	m_ccbPim.AddString(L"9null");
+	m_ccbPim.AddString(L"10cmtde23pim");
+	m_ccbPim.AddString(L"11cttde23pim");
 
-	HINSTANCE hDLL;
+	m_ccbPim.SetCurSel(0);
 
-	hDLL = LoadLibrary(L"JcMatrixSwitch.dll");
+	m_ccbDet.AddString(L"1Cdmagsmcp1");
+	m_ccbDet.AddString(L"2Cdmagsmcp2");
+	m_ccbDet.AddString(L"3fdd18cp1  ");
+	m_ccbDet.AddString(L"4fdd18cp2  ");
+	m_ccbDet.AddString(L"5fdd21cp1  ");
+	m_ccbDet.AddString(L"6fdd21cp2  ");
+	m_ccbDet.AddString(L"7tdftdacp1 ");
+	m_ccbDet.AddString(L"8tdftdacp2 ");
+	m_ccbDet.AddString(L"9tdftdacp3 ");
+	m_ccbDet.AddString(L"10tde23cp1  "); 
+	m_ccbDet.AddString(L"11tde23cp2  ");
 
-	pMSI = (pMartrixSwitchInit)GetProcAddress(hDLL, "MartrixSwitchInit");
-	pMSE1= (pMartrixSwitchBoxExcute)GetProcAddress(hDLL, "MartrixSwitchBoxExcute");
-	pMSE2= (pMartrixSwitchExcute)GetProcAddress(hDLL, "MartrixSwitchExcute");
-	pMSD = (pMartrixSwitchDispose)GetProcAddress(hDLL, "MartrixSwitchDispose");
+	m_ccbDet.SetCurSel(0);
 
-	int result = pMSI(NULL,NULL,ID_POI,0);
+	//HINSTANCE hDLL;
+
+	//hDLL = LoadLibrary(L"JcMatrixSwitch.dll");
+
+	//pMSI = (pMartrixSwitchInit)GetProcAddress(hDLL, "MartrixSwitchInit");
+	//pMSE1= (pMartrixSwitchBoxExcute)GetProcAddress(hDLL, "MartrixSwitchBoxExcute");
+	//pMSE2= (pMartrixSwitchExcute)GetProcAddress(hDLL, "MartrixSwitchExcute");
+	//pMSD = (pMartrixSwitchDispose)GetProcAddress(hDLL, "MartrixSwitchDispose");
+
+	//int result = pMSI(NULL, NULL, ID_POI, COMM_TYPE_TCP);
 	
+	int result = MartrixSwitchInit(NULL, NULL, ID_POI, COMM_TYPE_TCP);
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -393,11 +408,13 @@ CButton* CJcMatrixSwitchDemoDlg::NewMyGroup(int nID, CRect rect, int nStyle)
 BOOL CJcMatrixSwitchDemoDlg::SwitchManual(int swId,int swIdx)
 {
 	wchar_t buf[256];
-	wsprintf(buf, L"swId = %d,swIdx = %d", swId, swIdx);
+	wsprintf(buf, L"开关序号 = #%d , 开关引脚 = #%d", swId, swIdx);
+	
 	MessageBox(buf);
 
 	int i = m_cbbSwitch.GetCurSel();
-	pMSE2(i,swId,swIdx );
+
+	MartrixSwitchExcute(i, swId, swIdx);
 
 	return true;
 }
@@ -486,5 +503,5 @@ void CJcMatrixSwitchDemoDlg::OnClickedButton2()
 	int c = m_ccbPim.GetCurSel();
 	int d = m_ccbDet.GetCurSel();
 
-	pMSE1(a, b, c, d);
+	MartrixSwitchBoxExcute(a, b, c, d);
 }

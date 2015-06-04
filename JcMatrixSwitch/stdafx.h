@@ -21,6 +21,7 @@
 #include <list>
 #include <map>
 #include <regex>
+#include "JcMatrixSwitch.h"
 
 #include <Winsock2.h>
 #include <mswsock.h>

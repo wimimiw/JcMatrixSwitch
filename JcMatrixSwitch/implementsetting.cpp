@@ -24,7 +24,8 @@
 	将Connect中的功能禁用
 *------------------------------------------------------------------------------*/
 #include "stdafx.h"
-#include "switch_info.h"
+#include "switch_info_poi.h"
+#include "switch_info_huawei.h"
 #include "implementsetting.h"
 
 namespace ns_com_io_ctl
@@ -121,7 +122,7 @@ namespace ns_com_io_ctl
 		return result;  
 	}  
 	//加载映射表
-	bool implementsetting::LoadMap(void)
+	bool implementsetting::LoadMap(int type)
 	{
 		bool result = true;
 		string iopath = GetRunPath();
@@ -146,10 +147,22 @@ namespace ns_com_io_ctl
 
 		string fstr;
 
-		fstr.assign(IO_STRING);
-		ofio.write(fstr.c_str(), fstr.size());
-		fstr.assign(IMPLEMENT_STRING);
-		ofimplt.write(fstr.c_str(), fstr.size());
+		switch (type)
+		{
+			case ID_HUAWEI:
+				fstr.assign(IO_STRING_HUAWEI); 
+				ofio.write(fstr.c_str(), fstr.size());
+				fstr.assign(IMPLEMENT_STRING_HUAWEI);
+				ofimplt.write(fstr.c_str(), fstr.size());
+				break;
+			case ID_POI:
+				fstr.assign(IO_STRING_POI);
+				ofio.write(fstr.c_str(), fstr.size());
+				fstr.assign(IMPLEMENT_STRING_POI);
+				ofimplt.write(fstr.c_str(), fstr.size());				
+				break;
+			default:break;
+		}		
 
 		ofio.close();
 		ofimplt.close();
@@ -362,6 +375,8 @@ namespace ns_com_io_ctl
 	//获取行函数列表
 	void implementsetting::GetRowRunFunc(string str,rowRun&rr)
 	{
+		if (str == "") return;
+
 		StringReplace(str," ","");
 		vector<string>&temp = split(str,"),");
 					
@@ -413,7 +428,7 @@ namespace ns_com_io_ctl
 	//单独开关操作
 	void implementsetting::AddSwitchActionList(int addr, int swId, int swIdx)
 	{
-		if (addr > __ipNameList.size() || addr < 0)
+		if (addr > (int)__ipNameList.size() || addr < 0)
 		{
 			char buf[10];
 			sprintf_s(buf,"%d",addr);
@@ -421,7 +436,7 @@ namespace ns_com_io_ctl
 			return;
 		}
 
-		if (swId > __switchNameList.size() || swId < 0)
+		if (swId > (int)__switchNameList.size() || swId < 0)
 		{
 			char buf[10];
 			sprintf_s(buf, "%d", swId);
@@ -431,11 +446,11 @@ namespace ns_com_io_ctl
 
 		auto itrIP = __ipNameList.begin();
 
-		for (size_t i = 1; i < addr && itrIP != __ipNameList.end(); itrIP++, i++){}
+		for (int i = 1; i < addr && itrIP != __ipNameList.end(); itrIP++, i++){}
 
 		auto itrSwName = __switchNameList.begin();
 
-		for (size_t i = 1; i < swId && itrSwName != __switchNameList.end(); itrSwName++, i++){}
+		for (int i = 1; i < swId && itrSwName != __switchNameList.end(); itrSwName++, i++){}
 
 		AddActionList(__ipmap[*itrIP],*itrSwName,swIdx);
 	}
@@ -458,7 +473,7 @@ namespace ns_com_io_ctl
 			}
 		}
 
-		if (chan < 1 || chan > __ioInfoMap[sw].size())
+		if (chan < 1 || chan > (int)__ioInfoMap[sw].size())
 		{
 			char buf[10];
 			sprintf_s(buf,"%d",chan);

@@ -33,7 +33,7 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JcMatrixSwitchDef.h">
+    <ClInclude Include="JcMatrixSwitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

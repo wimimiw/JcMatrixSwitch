@@ -35,14 +35,14 @@ namespace ns_com_io_ctl{
 		public implementsetting
 	{	
 	public:
+		int __conType = CONNECT_TYEP;
 		string __dllHostName = DLL_HOST_NAME;
 		com_io_ctl(void);		
 		static void SocketTest();
 		virtual bool Reset(void);		
 		map<string, bool> __socketState;
 	private:	
-		bool __maskIO;		
-		EConType __conType = CONNECT_TYEP;
+		bool __maskIO;				
 		map<string,SOCKET> __socketClient;	
 		map<string,sockaddr_in> __addrRecver;
 		virtual void Delay(int mil);

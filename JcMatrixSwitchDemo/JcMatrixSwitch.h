@@ -1,5 +1,16 @@
-#ifndef __JCMATRIXsWITCHDEF_H__
-#define __JCMATRIXsWITCHDEF_H__
+
+#ifndef __JC_MATRIX_SWITCH_H__
+#define __JC_MATRIX_SWITCH_H__
+
+#define MATRIX_SWITCH_OK						(0 )
+#define MATRIX_SWITCH_ERROR_INIT_EXCEPTION		(-1)
+#define MATRIX_SWITCH_ERROR_INI_FILE_NOEXIST	(-2)
+#define MATRIX_SWITCH_ERROR_OBJECT_NULL			(-3)
+#define MATRIX_SWITCH_EXCUTE_FAILED				(-1)
+
+#define COMM_TYPE_TCP		(2)
+#define COMM_TYPE_UDP		(3)
+#define COMM_TYPE_COM		(4)
 
 #define ID_HUAWEI			(1)
 #define ID_POI				(2)
@@ -73,5 +84,17 @@
 #define ID_tde23cp1	        (10)
 #define ID_tde23cp2         (11)
 /**********************************************************/
+
+//函数指针类型
+typedef int(*pMartrixSwitchInit)(int, char*, int, int);
+typedef int(*pMartrixSwitchExcute)(int, int, int);
+typedef int(*pMartrixSwitchBoxExcute)(int, int, int, int);
+typedef int(*pMartrixSwitchDispose)();
+
+int MartrixSwitchInit(int handle, char*dllName, int swType, int comType);
+int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det);
+int MartrixSwitchExcute(int addr, int swId, int swIdx);
+int MartrixSwitchDispose();
+
 
 #endif

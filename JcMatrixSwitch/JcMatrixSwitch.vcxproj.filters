@@ -30,10 +30,13 @@
     <ClInclude Include="implementsetting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="switch_info.h">
+    <ClInclude Include="JcMatrixSwitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JcMatrixSwitch.h">
+    <ClInclude Include="switch_info_poi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch_info_huawei.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

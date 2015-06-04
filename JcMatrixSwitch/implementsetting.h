@@ -93,7 +93,7 @@ namespace ns_com_io_ctl
 		vector<string>&GetTx2NameList(void);
 		vector<string>&GetPimNameList(void);
 		vector<string>&GetDetNameList(void);
-		bool LoadMap();
+		bool LoadMap(int type);
 		bool Connect(void);
 		void DisConnect(void);
 		void Clear(void);
