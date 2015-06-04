@@ -36,7 +36,7 @@
 "//通道5-->4\n"\
 "//通道6-->5\n"\
 "//通道7-->6\n"\
-"[Spectrumswich]\n"\
+"[Powermeterswich]\n"\
 "0=0,0,0,0,2,\n"\
 "1=0,0,0,0,1,\n"\
 "2=0,512,0,0,0,\n"\
@@ -52,7 +52,7 @@
 "//通道5-->14\n"\
 "//通道6-->15\n"\
 "//通道3-->16\n"\
-"[Powermeterswich]\n"\
+"[Spectrumswich]\n"\
 "10=0,0,0,16,0,\n"\
 "11=0,0,0,8,0,\n"\
 "12=0,0,0,4,0,\n"\
@@ -87,13 +87,13 @@
 "//开关1\n"\
 "//通道1-->21\n"\
 "//通道2-->20\n"\
-"[Couplerswich2]\n"\
+"[Pimswich1]\n"\
 "21=16,0,0,0,0,\n"\
 "20=32,0,0,0,0,\n"\
 "//开关2\n"\
 "//通道1-->24\n"\
 "//通道2-->23\n"\
-"[Pimswich1]\n"\
+"[Couplerswich2]\n"\
 "24=128,0,0,0,0,\n"\
 "23=0,0,16,0,0,\n"\
 "//开关3\n"\
@@ -182,7 +182,7 @@
 "Testmdtdd23       =192.168.1.94:4001\n"\
 "\n"\
 "[switch]\n"\
-"namelist = Signal1swich,Signal2swich,PA2swich1,PA2swich2,Spectrumswich,Powermeterswich,Couplerswich2,Pimswich1,Tx1swich3,Tx2swich4,Antmodeswich5,Antmodeswich6\n"\
+"namelist = Signal1swich,Signal2swich,PA2swich1,PA2swich2,Powermeterswich,Spectrumswich,Couplerswich2,Pimswich1,Tx1swich3,Tx2swich4,Antmodeswich5,Antmodeswich6\n"\
 "Signal1swich =PA1in1,PA2in1,PA3in1,PA4in1\n"\
 "PA1in1=1\n"\
 "PA2in1=2\n"\
@@ -273,8 +273,8 @@
 "\n"\
 "tdftdacp3= Powermeterswich(Paspecumpwmt,tdftdapwmt2)\n"\
 "\n"\
-"tde23cp1= Powermeterswich(Paspecumpwmt,tdftdapwmt), Couplerswich2(Testmdtdftda,nc1)\n"\
-"tde23cp2= Powermeterswich(Paspecumpwmt,tdftdapwmt), Couplerswich2(Testmdtdftda,no2)\n"\
+"tde23cp1= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdftda,nc1)\n"\
+"tde23cp2= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdftda,no2)\n"\
 "\n"\
 "[actionpim]\n"\
 "namelist = 1gsmpim,2cdmapim,3ctfd18pim,4cufd18pim,5ctfd21pim,6cuw21pim,7cmdcspim,8cmtdfpim,9null,10cmtde23pim,11cttde23pim\n"\
