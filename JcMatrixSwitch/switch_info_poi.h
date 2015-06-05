@@ -289,12 +289,12 @@
 "6cuw21pim= Spectrumswich(Paspecumpwmt,fdd21pim), Pimswich1(Testmdfdd21,no2)\n"\
 "\n"\
 "7cmdcspim= Spectrumswich(Paspecumpwmt,tdftdapim), Pimswich1(Testmdtdftda,nc1)\n"\
-"8cmtdfpim= Spectrumswich(Paspecumpwmt,tdftdapim), Pimswich1(Testmdtdftda,no2)\n"\
+"8cmtdfpim= Spectrumswich(Paspecumpwmt,tdftdapim), Pimswich1(Testmdtdftda,no2),Antmodeswich5(Testmdtdftda,no2)\n"\
 "\n"\
 "9null=\n"\
 "\n"\
-"10cmtde23pim= Spectrumswich(Paspecumpwmt,tdd23pim), Pimswich1(Testmdtdd23,nc1)\n"\
-"11cttde23pim= Spectrumswich(Paspecumpwmt,tdd23pim), Pimswich1(Testmdtdd23,no2)\n"\
+"10cmtde23pim= Spectrumswich(Paspecumpwmt,tdd23pim), Pimswich1(Testmdtdd23,nc1),Antmodeswich6(Testmdtdd23,no2)\n"\
+"11cttde23pim= Spectrumswich(Paspecumpwmt,tdd23pim), Pimswich1(Testmdtdd23,no2),Antmodeswich5(Testmdtdd23,no2)\n"\
 "\n"\
 "\n"\
 "\n"\
