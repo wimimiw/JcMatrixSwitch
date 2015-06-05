@@ -273,8 +273,8 @@
 "\n"\
 "tdftdacp3= Powermeterswich(Paspecumpwmt,tdftdapwmt2)\n"\
 "\n"\
-"tde23cp1= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdftda,nc1)\n"\
-"tde23cp2= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdftda,no2)\n"\
+"tde23cp1= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdd23,nc1)\n"\
+"tde23cp2= Powermeterswich(Paspecumpwmt,tdd23pwmt), Couplerswich2(Testmdtdd23,no2)\n"\
 "\n"\
 "[actionpim]\n"\
 "namelist = 1gsmpim,2cdmapim,3ctfd18pim,4cufd18pim,5ctfd21pim,6cuw21pim,7cmdcspim,8cmtdfpim,9null,10cmtde23pim,11cttde23pim\n"\
