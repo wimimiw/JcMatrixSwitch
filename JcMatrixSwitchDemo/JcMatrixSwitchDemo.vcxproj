@@ -129,7 +129,11 @@
     <None Include="res\JcMatrixSwitchDemo.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\123.bmp" />
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap2.bmp" />
     <Image Include="res\JcMatrixSwitchDemo.ico" />
+    <Image Include="res\捕获.PNG" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
