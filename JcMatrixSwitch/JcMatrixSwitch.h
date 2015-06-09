@@ -23,6 +23,8 @@
 //矩阵开关类型
 #define ID_HUAWEI			(1)
 #define ID_POI				(2)
+//忽略通道设置字
+#define ID_CHAN_IGNORE		(-1)
 /**********************************************************/
 /*HUA WEI DEFINE*/
 //TX1通道序号
