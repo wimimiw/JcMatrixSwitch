@@ -167,7 +167,8 @@ namespace ns_com_io_ctl
 		ofio.close();
 		ofimplt.close();
 
-		string ipSection = (type == ID_HUAWEI) ? "ip_huawei" : "ip_poi";
+		//string ipSection = (type == ID_HUAWEI) ? "ip_huawei" : "ip_poi";
+		string ipSection = "ip";
 
 		if (LoadParaIM(ipSection) == false)
 		{

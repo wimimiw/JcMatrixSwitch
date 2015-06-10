@@ -135,7 +135,7 @@
 "\n"\
 "\n"\
 ""
-#define IMPLEMENT_STRING_HUAWEI  "[ip_huawei]\n"\
+#define IMPLEMENT_STRING_HUAWEI  "[ip]\n"\
 "namelist			=Signalswich,Paspecumpwmt,Testmdlte700,Testmddd800,Testmdgsm900,Testmddcs1800,Testmdpcs1900,Testmdwcdma2100,Testmdlte2600\n"\
 "Signalswich         =127.0.0.1:5000\n"\
 "Paspecumpwmt        =127.0.0.1:5001\n"\
