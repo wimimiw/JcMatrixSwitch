@@ -8,6 +8,8 @@
 #define MATRIX_SWITCH_ERROR_OBJECT_NULL			(-3)
 #define MATRIX_SWITCH_EXCUTE_FAILED				(-1)
 
+
+
 #define COMM_TYPE_TCP		(2)
 #define COMM_TYPE_UDP		(3)
 #define COMM_TYPE_COM		(4)

@@ -575,6 +575,13 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 
 		MartrixSwitchDispose();
 		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_POI, COMM_TYPE_TCP);
+
+		if (result != MATRIX_SWITCH_OK)
+		{
+			wchar_t tmp[10];
+			swprintf_s(tmp,L"Error Return Code = %d",result);
+			MessageBox(tmp);
+		}
 	}
 	else if (idx == 1)
 	{
