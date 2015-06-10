@@ -101,4 +101,6 @@ public:
 	afx_msg void OnSelchangeCombo6();
 	CButton m_ccbCommit;
 	afx_msg void OnClickedButton2();
+	CComboBox m_ccbSWType;
+	afx_msg void OnCbnSelchangeCombo7();
 };

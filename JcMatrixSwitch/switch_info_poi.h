@@ -171,7 +171,7 @@
 "35=0,2048,0,0,0,\n"\
 "\n"\
 ""
-#define IMPLEMENT_STRING_POI  "[ip]\n"\
+#define IMPLEMENT_STRING_POI  "[ip_poi]\n"\
 "namelist =Signalswich,Paspecumpwmt,Testmdcdmagsm,Testmdfdd18,Testmdfdd21,Testmdtdftda,Testmdtdd23\n"\
 "Signalswich       =192.168.1.81:4001\n"\
 "Paspecumpwmt      =192.168.1.82:4001\n"\

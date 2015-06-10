@@ -62,6 +62,7 @@ void CJcMatrixSwitchDemoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO5, m_ccbPim);
 	DDX_Control(pDX, IDC_COMBO6, m_ccbDet);
 	DDX_Control(pDX, IDC_BUTTON2, m_ccbCommit);
+	DDX_Control(pDX, IDC_COMBO7, m_ccbSWType);
 }
 
 BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
@@ -117,6 +118,7 @@ BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
 	ON_CBN_SELCHANGE(IDC_COMBO5, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo5)
 	ON_CBN_SELCHANGE(IDC_COMBO6, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo6)
 	ON_BN_CLICKED(IDC_BUTTON2, &CJcMatrixSwitchDemoDlg::OnClickedButton2)
+	ON_CBN_SELCHANGE(IDC_COMBO7, &CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7)
 END_MESSAGE_MAP()
 
 // CJcMatrixSwitchDemoDlg message handlers
@@ -272,72 +274,9 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 			p_MyRadio[i]->EnableWindow(TRUE);
 	}
 
-	m_cbbSwitch.AddString(L"IP_Signalswich");
-	m_cbbSwitch.AddString(L"IP_Paspecumpwmt");
-	m_cbbSwitch.AddString(L"IP_Testmdcdmagsm");
-	m_cbbSwitch.AddString(L"IP_Testmdfdd18");
-	m_cbbSwitch.AddString(L"IP_Testmdfdd21");
-	m_cbbSwitch.AddString(L"IP_Testmdtdftda");
-	m_cbbSwitch.AddString(L"IP_Testmdtdd23");
-
-	m_cbbSwitch.SetCurSel(0);
-
-	m_ccbTx1.AddString(L"1Cmgsmtx1 ");
-	m_ccbTx1.AddString(L"2Cucdmatx1");
-	m_ccbTx1.AddString(L"3Ctfd18tx1");
-	m_ccbTx1.AddString(L"4Cufd18tx1");
-	m_ccbTx1.AddString(L"5Ctfd21tx1");
-	m_ccbTx1.AddString(L"6Cuw21tx1 ");
-	m_ccbTx1.AddString(L"7Cmdcstx1 ");
-	m_ccbTx1.AddString(L"8Cmtdftx1 ");
-	m_ccbTx1.AddString(L"9null");
-    m_ccbTx1.AddString(L"10Cmtdetx1");
-    m_ccbTx1.AddString(L"11Cttdetx1");
-
-	m_ccbTx1.SetCurSel(0);
-	
-	m_ccbTx2.AddString(L"1Cmgsmtx2 ");
-	m_ccbTx2.AddString(L"2Cucdmatx2");
-	m_ccbTx2.AddString(L"3Ctfd18tx2");
-	m_ccbTx2.AddString(L"4Cufd18tx2");
-	m_ccbTx2.AddString(L"5Ctfd21tx2");
-	m_ccbTx2.AddString(L"6Cuw21tx2 ");
-	m_ccbTx2.AddString(L"7Cmdcstx2 ");
-	m_ccbTx2.AddString(L"8Cmtdftx2 ");
-	m_ccbTx2.AddString(L"9Cmtdatx2 ");
-	m_ccbTx2.AddString(L"10Cmtdetx2");
-	m_ccbTx2.AddString(L"11null");
-	m_ccbTx2.AddString(L"12Cutdetx2");
-
-	m_ccbTx2.SetCurSel(0);
-
-	m_ccbPim.AddString(L"1gsmpim    ");
-	m_ccbPim.AddString(L"2cdmapim   ");
-	m_ccbPim.AddString(L"3ctfd18pim ");
-	m_ccbPim.AddString(L"4cufd18pim ");
-	m_ccbPim.AddString(L"5ctfd21pim ");
-	m_ccbPim.AddString(L"6cuw21pim  ");
-	m_ccbPim.AddString(L"7cmdcspim  ");
-	m_ccbPim.AddString(L"8cmtdfpim  ");
-	m_ccbPim.AddString(L"9null");
-	m_ccbPim.AddString(L"10cmtde23pim");
-	m_ccbPim.AddString(L"11cttde23pim");
-
-	m_ccbPim.SetCurSel(0);
-
-	m_ccbDet.AddString(L"1Cdmagsmcp1");
-	m_ccbDet.AddString(L"2Cdmagsmcp2");
-	m_ccbDet.AddString(L"3fdd18cp1  ");
-	m_ccbDet.AddString(L"4fdd18cp2  ");
-	m_ccbDet.AddString(L"5fdd21cp1  ");
-	m_ccbDet.AddString(L"6fdd21cp2  ");
-	m_ccbDet.AddString(L"7tdftdacp1 ");
-	m_ccbDet.AddString(L"8tdftdacp2 ");
-	m_ccbDet.AddString(L"9tdftdacp3 ");
-	m_ccbDet.AddString(L"10tde23cp1  "); 
-	m_ccbDet.AddString(L"11tde23cp2  ");
-
-	m_ccbDet.SetCurSel(0);
+	m_ccbSWType.AddString(L"POI");
+	m_ccbSWType.AddString(L"HUAWEI");
+	//m_ccbSWType.SetCurSel(0);
 
 	//HINSTANCE hDLL;
 
@@ -348,9 +287,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	//pMSE2= (pMartrixSwitchExcute)GetProcAddress(hDLL, "MartrixSwitchExcute");
 	//pMSD = (pMartrixSwitchDispose)GetProcAddress(hDLL, "MartrixSwitchDispose");
 
-	//int result = pMSI(NULL, NULL, ID_POI, COMM_TYPE_TCP);
-	
-	int result = MartrixSwitchInit(NULL, NULL, ID_POI, COMM_TYPE_TCP);
+	//int result = pMSI(NULL, NULL, ID_POI, COMM_TYPE_TCP);	
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -552,4 +489,171 @@ void CJcMatrixSwitchDemoDlg::OnClickedButton2()
 	int d = m_ccbDet.GetCurSel();
 
 	MartrixSwitchBoxExcute(a, b, c, d);
+}
+
+
+void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
+{
+	// TODO: Add your control notification handler code here
+	int idx = m_ccbSWType.GetCurSel();
+	
+	if (idx == 0)
+	{		
+
+		for (size_t j = 0; j < 6; j++)
+		{
+			if (p_MyRadio[j] != NULL)
+				p_MyRadio[j]->EnableWindow(TRUE);
+		}
+
+		m_cbbSwitch.ResetContent();
+		m_cbbSwitch.AddString(L"IP_Signalswich");
+		m_cbbSwitch.AddString(L"IP_Paspecumpwmt");
+		m_cbbSwitch.AddString(L"IP_Testmdcdmagsm");
+		m_cbbSwitch.AddString(L"IP_Testmdfdd18");
+		m_cbbSwitch.AddString(L"IP_Testmdfdd21");
+		m_cbbSwitch.AddString(L"IP_Testmdtdftda");
+		m_cbbSwitch.AddString(L"IP_Testmdtdd23");
+		m_cbbSwitch.SetCurSel(0);
+
+		m_ccbTx1.ResetContent();
+		m_ccbTx1.AddString(L"1Cmgsmtx1 ");
+		m_ccbTx1.AddString(L"2Cucdmatx1");
+		m_ccbTx1.AddString(L"3Ctfd18tx1");
+		m_ccbTx1.AddString(L"4Cufd18tx1");
+		m_ccbTx1.AddString(L"5Ctfd21tx1");
+		m_ccbTx1.AddString(L"6Cuw21tx1 ");
+		m_ccbTx1.AddString(L"7Cmdcstx1 ");
+		m_ccbTx1.AddString(L"8Cmtdftx1 ");
+		m_ccbTx1.AddString(L"9null");
+		m_ccbTx1.AddString(L"10Cmtdetx1");
+		m_ccbTx1.AddString(L"11Cttdetx1");
+		m_ccbTx1.SetCurSel(0);
+
+		m_ccbTx2.ResetContent();
+		m_ccbTx2.AddString(L"1Cmgsmtx2 ");
+		m_ccbTx2.AddString(L"2Cucdmatx2");
+		m_ccbTx2.AddString(L"3Ctfd18tx2");
+		m_ccbTx2.AddString(L"4Cufd18tx2");
+		m_ccbTx2.AddString(L"5Ctfd21tx2");
+		m_ccbTx2.AddString(L"6Cuw21tx2 ");
+		m_ccbTx2.AddString(L"7Cmdcstx2 ");
+		m_ccbTx2.AddString(L"8Cmtdftx2 ");
+		m_ccbTx2.AddString(L"9Cmtdatx2 ");
+		m_ccbTx2.AddString(L"10Cmtdetx2");
+		m_ccbTx2.AddString(L"11null");
+		m_ccbTx2.AddString(L"12Cutdetx2");
+		m_ccbTx2.SetCurSel(0);
+
+		m_ccbPim.ResetContent();
+		m_ccbPim.AddString(L"1gsmpim    ");
+		m_ccbPim.AddString(L"2cdmapim   ");
+		m_ccbPim.AddString(L"3ctfd18pim ");
+		m_ccbPim.AddString(L"4cufd18pim ");
+		m_ccbPim.AddString(L"5ctfd21pim ");
+		m_ccbPim.AddString(L"6cuw21pim  ");
+		m_ccbPim.AddString(L"7cmdcspim  ");
+		m_ccbPim.AddString(L"8cmtdfpim  ");
+		m_ccbPim.AddString(L"9null");
+		m_ccbPim.AddString(L"10cmtde23pim");
+		m_ccbPim.AddString(L"11cttde23pim");
+		m_ccbPim.SetCurSel(0);
+
+		m_ccbDet.ResetContent();
+		m_ccbDet.AddString(L"1Cdmagsmcp1");
+		m_ccbDet.AddString(L"2Cdmagsmcp2");
+		m_ccbDet.AddString(L"3fdd18cp1  ");
+		m_ccbDet.AddString(L"4fdd18cp2  ");
+		m_ccbDet.AddString(L"5fdd21cp1  ");
+		m_ccbDet.AddString(L"6fdd21cp2  ");
+		m_ccbDet.AddString(L"7tdftdacp1 ");
+		m_ccbDet.AddString(L"8tdftdacp2 ");
+		m_ccbDet.AddString(L"9tdftdacp3 ");
+		m_ccbDet.AddString(L"10tde23cp1  ");
+		m_ccbDet.AddString(L"11tde23cp2  ");
+		m_ccbDet.SetCurSel(0);
+
+		MartrixSwitchDispose();
+		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_POI, COMM_TYPE_TCP);
+	}
+	else if (idx == 1)
+	{
+
+		for (size_t j = 0; j < 100; j++)
+		{
+			if (p_MyRadio[j] != NULL)
+				p_MyRadio[j]->EnableWindow(FALSE);
+		}
+
+		m_ccbTx1.ResetContent();
+		m_ccbTx1.AddString(L"TX1_1_700");
+		m_ccbTx1.AddString(L"TX1_2_700");
+		m_ccbTx1.AddString(L"TX1_1_800");
+		m_ccbTx1.AddString(L"TX1_2_800");
+		m_ccbTx1.AddString(L"TX1_1_900");
+		m_ccbTx1.AddString(L"TX1_2_900 ");
+		m_ccbTx1.AddString(L"TX1_1_1800 ");
+		m_ccbTx1.AddString(L"TX1_2_1800 ");
+		m_ccbTx1.AddString(L"TX1_1_1900");
+		m_ccbTx1.AddString(L"TX1_2_1900");
+		m_ccbTx1.AddString(L"TX1_1_2100");
+		m_ccbTx1.AddString(L"TX1_2_2100");
+		m_ccbTx1.AddString(L"TX1_1_2600");
+		m_ccbTx1.AddString(L"TX1_2_2600");
+		m_ccbTx1.SetCurSel(0);
+
+		m_ccbTx2.ResetContent();
+		m_ccbTx2.AddString(L"TX2_1_700");
+		m_ccbTx2.AddString(L"TX2_2_700");
+		m_ccbTx2.AddString(L"TX2_1_800");
+		m_ccbTx2.AddString(L"TX2_2_800");
+		m_ccbTx2.AddString(L"TX2_1_900");
+		m_ccbTx2.AddString(L"TX2_2_900 ");
+		m_ccbTx2.AddString(L"TX2_1_1800 ");
+		m_ccbTx2.AddString(L"TX2_2_1800 ");
+		m_ccbTx2.AddString(L"TX2_1_1900");
+		m_ccbTx2.AddString(L"TX2_2_1900");
+		m_ccbTx2.AddString(L"TX2_1_2100");
+		m_ccbTx2.AddString(L"TX2_2_2100");
+		m_ccbTx2.AddString(L"TX2_1_2600");
+		m_ccbTx2.AddString(L"TX2_2_2600");
+		m_ccbTx2.SetCurSel(0);
+
+		m_ccbPim.ResetContent();
+		m_ccbPim.AddString(L"PIM_1_700");
+		m_ccbPim.AddString(L"PIM_2_700");
+		m_ccbPim.AddString(L"PIM_1_800");
+		m_ccbPim.AddString(L"PIM_2_800");
+		m_ccbPim.AddString(L"PIM_1_900");
+		m_ccbPim.AddString(L"PIM_2_900 ");
+		m_ccbPim.AddString(L"PIM_1_1800 ");
+		m_ccbPim.AddString(L"PIM_2_1800 ");
+		m_ccbPim.AddString(L"PIM_1_1900");
+		m_ccbPim.AddString(L"PIM_2_1900");
+		m_ccbPim.AddString(L"PIM_1_2100");
+		m_ccbPim.AddString(L"PIM_2_2100");
+		m_ccbPim.AddString(L"PIM_1_2600");
+		m_ccbPim.AddString(L"PIM_2_2600");
+		m_ccbPim.SetCurSel(0);
+
+		m_ccbDet.ResetContent();
+		m_ccbDet.AddString(L"DET_1_700");
+		m_ccbDet.AddString(L"DET_2_700");
+		m_ccbDet.AddString(L"DET_1_800");
+		m_ccbDet.AddString(L"DET_2_800");
+		m_ccbDet.AddString(L"DET_1_900");
+		m_ccbDet.AddString(L"DET_2_900 ");
+		m_ccbDet.AddString(L"DET_1_1800 ");
+		m_ccbDet.AddString(L"DET_2_1800 ");
+		m_ccbDet.AddString(L"DET_1_1900");
+		m_ccbDet.AddString(L"DET_2_1900");
+		m_ccbDet.AddString(L"DET_1_2100");
+		m_ccbDet.AddString(L"DET_2_2100");
+		m_ccbDet.AddString(L"DET_1_2600");
+		m_ccbDet.AddString(L"DET_2_2600");
+		m_ccbDet.SetCurSel(0);
+
+		MartrixSwitchDispose();
+		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
+	}
 }
