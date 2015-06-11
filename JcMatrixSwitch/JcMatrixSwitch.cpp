@@ -111,8 +111,9 @@ int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
 	else
 		result = MATRIX_CHAN_IDX_INVAID_4;
 
-	if (result != MATRIX_SWITCH_OK)
-		return result;
+	//通道非法的结果不处理...
+	//if (result != MATRIX_SWITCH_OK)
+	//	return result;
 
 	result = cic->Excute() ? MATRIX_SWITCH_OK : MATRIX_SWITCH_EXCUTE_FAILED;
 
