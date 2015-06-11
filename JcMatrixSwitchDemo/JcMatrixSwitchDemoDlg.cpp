@@ -370,7 +370,14 @@ BOOL CJcMatrixSwitchDemoDlg::SwitchManual(int swId,int swIdx)
 
 	int i = m_cbbSwitch.GetCurSel();
 
-	MartrixSwitchExcute(i+1, swId, swIdx);
+	int result = MartrixSwitchExcute(i+1, swId, swIdx);
+
+	if (result != MATRIX_SWITCH_OK)
+	{
+		wchar_t tmp[10];
+		swprintf_s(tmp, L"Error Return Code = %d", result);
+		MessageBox(tmp);
+	}
 
 	return true;
 }
@@ -488,7 +495,14 @@ void CJcMatrixSwitchDemoDlg::OnClickedButton2()
 	int c = m_ccbPim.GetCurSel();
 	int d = m_ccbDet.GetCurSel();
 
-	MartrixSwitchBoxExcute(a, b, c, d);
+	int result = MartrixSwitchBoxExcute(a, b, c, d);
+
+	if (result != MATRIX_SWITCH_OK)
+	{
+		wchar_t tmp[10];
+		swprintf_s(tmp, L"Error Return Code = %d", result);
+		MessageBox(tmp);
+	}
 }
 
 
@@ -579,7 +593,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		if (result != MATRIX_SWITCH_OK)
 		{
 			wchar_t tmp[10];
-			swprintf_s(tmp,L"Error Return Code = %d",result);
+			swprintf_s(tmp, L"Error Return Code = %d", result);
 			MessageBox(tmp);
 		}
 	}
@@ -662,5 +676,12 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 
 		MartrixSwitchDispose();
 		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
+
+		if (result != MATRIX_SWITCH_OK)
+		{
+			wchar_t tmp[10];
+			swprintf_s(tmp, L"Error Return Code = %d", result);
+			MessageBox(tmp);
+		}
 	}
 }
