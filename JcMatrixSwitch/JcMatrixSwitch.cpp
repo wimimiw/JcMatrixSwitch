@@ -91,12 +91,12 @@ int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
 
 	cic->Clear();
 
-	if (tx1 != ID_CHAN_IGNORE && tx1 <  (int)nltx1.size())
+	if (tx1 != ID_CHAN_IGNORE && tx1 < (int)nltx1.size())
 		cic->SelChanTx1(nltx1[tx1]);
 	else
 		result = MATRIX_CHAN_IDX_INVAID_1;
 
-	if (tx2 != ID_CHAN_IGNORE && tx2 <  (int)nltx2.size())
+	if (tx2 != ID_CHAN_IGNORE && tx2 < (int)nltx2.size())
 		cic->SelChanTx2(nltx2[tx2]);
 	else
 		result = MATRIX_CHAN_IDX_INVAID_2;

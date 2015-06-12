@@ -542,6 +542,12 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx1.AddString(L"9null");
 		m_ccbTx1.AddString(L"10Cmtdetx1");
 		m_ccbTx1.AddString(L"11Cttdetx1");
+		m_ccbTx1.AddString(L"12null");
+		m_ccbTx1.AddString(L"13Cmtdftx1 ");
+		m_ccbTx1.AddString(L"14null");
+		m_ccbTx1.AddString(L"15Cmtdetx1");
+		m_ccbTx1.AddString(L"16Cttdetx1");
+		m_ccbTx1.AddString(L"17null");
 		m_ccbTx1.SetCurSel(0);
 
 		m_ccbTx2.ResetContent();
@@ -557,6 +563,11 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx2.AddString(L"10Cmtdetx2");
 		m_ccbTx2.AddString(L"11null");
 		m_ccbTx2.AddString(L"12Cutdetx2");
+		m_ccbTx2.AddString(L"13Cmtdftx2 ");
+		m_ccbTx2.AddString(L"14Cmtdatx2 ");
+		m_ccbTx2.AddString(L"15Cmtdetx2");
+		m_ccbTx2.AddString(L"16null");
+		m_ccbTx2.AddString(L"17Cutdetx2");
 		m_ccbTx2.SetCurSel(0);
 
 		m_ccbPim.ResetContent();
@@ -571,6 +582,12 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbPim.AddString(L"9null");
 		m_ccbPim.AddString(L"10cmtde23pim");
 		m_ccbPim.AddString(L"11cttde23pim");
+		m_ccbPim.AddString(L"12null");
+		m_ccbPim.AddString(L"13cmtdfpim  ");
+		m_ccbPim.AddString(L"14null");
+		m_ccbPim.AddString(L"15cmtde23pim");
+		m_ccbPim.AddString(L"16cttde23pim");
+		m_ccbPim.AddString(L"17null");
 		m_ccbPim.SetCurSel(0);
 
 		m_ccbDet.ResetContent();
