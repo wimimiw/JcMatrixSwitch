@@ -1,0 +1,17 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\zne_ip_cfg.Application = zne_ip_cfg Application
+
+
+HKEY_CLASSES_ROOT\zne_ip_cfg.Application\CLSID = {D605316E-743B-491B-969D-5ED551929DA9}
+
+HKEY_CLASSES_ROOT\CLSID\{D605316E-743B-491B-969D-5ED551929DA9} = zne_ip_cfg Application
+HKEY_CLASSES_ROOT\CLSID\{D605316E-743B-491B-969D-5ED551929DA9}\ProgId = zne_ip_cfg.Application
+
+
+HKEY_CLASSES_ROOT\CLSID\{D605316E-743B-491B-969D-5ED551929DA9}\LocalServer32 = zne_ip_cfg.EXE

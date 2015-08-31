@@ -6,7 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <Windows.h>
-#include "../Debug/switch_info.h"
+//#include "../Debug/switch_info.h"
 
 using namespace std;
 
@@ -102,27 +102,27 @@ int _tmain(int argc, _TCHAR* argv[])
 	ifipt.close();
 	ofheader.close();
 
-	const string sOio = "io.ini";
-	const string sOimplt = "implementsetting.ini";
+	//const string sOio = "io.ini";
+	//const string sOimplt = "implementsetting.ini";
 
-	ofstream ofio(sOio);
-	ofstream ofimplt(sOimplt);
+	//ofstream ofio(sOio);
+	//ofstream ofimplt(sOimplt);
 
-	string fg;
+	//string fg;
 
-	fg.assign(IO_STRING);
+	//fg.assign(IO_STRING);
 
-	ofio.write(fg.c_str(),fg.size());
+	//ofio.write(fg.c_str(),fg.size());
 
-	fg.assign(IMPLEMENT_STRING);
+	//fg.assign(IMPLEMENT_STRING);
 
-	ofimplt.write(fg.c_str(), fg.size());
-	
-	ofio.close();
-	ofimplt.close();
+	//ofimplt.write(fg.c_str(), fg.size());
+	//
+	//ofio.close();
+	//ofimplt.close();
 
-	DeleteFileA(sOio.c_str());
-	DeleteFileA(sOimplt.c_str());
+	//DeleteFileA(sOio.c_str());
+	//DeleteFileA(sOimplt.c_str());
 	
 	return 0;
 }

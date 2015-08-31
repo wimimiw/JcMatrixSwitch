@@ -1,0 +1,29 @@
+// zne_ip_cfg.idl : type library source for zne_ip_cfg.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (zne_ip_cfg.tlb).
+
+[ uuid(7CF05727-CF62-456C-BDE5-CB52547F2E56), version(1.0) ]
+library zne_ip_cfg
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for Czne_ip_cfgDoc
+	
+	[ uuid(E911E8BA-93F0-40F8-8240-AC098A1B3C8B) ]
+	dispinterface Izne_ip_cfg
+	{
+		properties:
+			
+		methods:
+	};
+
+	//  Class information for Czne_ip_cfgDoc
+	
+	[ uuid(D605316E-743B-491B-969D-5ED551929DA9) ]
+	coclass zne_ip_cfg
+	{
+		[default] dispinterface Izne_ip_cfg;
+	};
+};

@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JcMatrixSwitch", "JcMatrixS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JcMatrixSwitchDemo", "JcMatrixSwitchDemo\JcMatrixSwitchDemo.vcxproj", "{C005A9CB-2674-4A6C-A3A8-F74AAB2A5A65}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ini2header", "ini2header\ini2header.vcxproj", "{451DBCE3-6491-4E9F-9CF1-7B5043071EF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jc_pim_huawei_switch_patch", "jc_pim_huawei_switch_patch\jc_pim_huawei_switch_patch.vcxproj", "{43D191AE-3CD8-4589-AAEE-DD87CCA7EE02}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zne_ip_cfg", "zne_ip_cfg\zne_ip_cfg.vcxproj", "{686913A7-A73B-4E1B-A604-F306A2B3F0F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +27,18 @@ Global
 		{C005A9CB-2674-4A6C-A3A8-F74AAB2A5A65}.Debug|Win32.Build.0 = Debug|Win32
 		{C005A9CB-2674-4A6C-A3A8-F74AAB2A5A65}.Release|Win32.ActiveCfg = Release|Win32
 		{C005A9CB-2674-4A6C-A3A8-F74AAB2A5A65}.Release|Win32.Build.0 = Release|Win32
+		{451DBCE3-6491-4E9F-9CF1-7B5043071EF2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{451DBCE3-6491-4E9F-9CF1-7B5043071EF2}.Debug|Win32.Build.0 = Debug|Win32
+		{451DBCE3-6491-4E9F-9CF1-7B5043071EF2}.Release|Win32.ActiveCfg = Release|Win32
+		{451DBCE3-6491-4E9F-9CF1-7B5043071EF2}.Release|Win32.Build.0 = Release|Win32
+		{43D191AE-3CD8-4589-AAEE-DD87CCA7EE02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43D191AE-3CD8-4589-AAEE-DD87CCA7EE02}.Debug|Win32.Build.0 = Debug|Win32
+		{43D191AE-3CD8-4589-AAEE-DD87CCA7EE02}.Release|Win32.ActiveCfg = Release|Win32
+		{43D191AE-3CD8-4589-AAEE-DD87CCA7EE02}.Release|Win32.Build.0 = Release|Win32
+		{686913A7-A73B-4E1B-A604-F306A2B3F0F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{686913A7-A73B-4E1B-A604-F306A2B3F0F1}.Debug|Win32.Build.0 = Debug|Win32
+		{686913A7-A73B-4E1B-A604-F306A2B3F0F1}.Release|Win32.ActiveCfg = Release|Win32
+		{686913A7-A73B-4E1B-A604-F306A2B3F0F1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
