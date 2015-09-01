@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JcDeviceControl.Properties {
+namespace S21Debug.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

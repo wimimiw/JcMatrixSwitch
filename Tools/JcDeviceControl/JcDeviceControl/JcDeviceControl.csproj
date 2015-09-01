@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JcDeviceControl</RootNamespace>
     <AssemblyName>JcDeviceControl</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -72,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +104,10 @@
     <ProjectReference Include="..\JcMcuUpgrade\JcMcuUpgrade.csproj">
       <Project>{72b69eb8-71f2-4c85-8bba-96c3478fb6b5}</Project>
       <Name>JcMcuUpgrade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\S21Debug\S21Debug.csproj">
+      <Project>{ae68a48a-c25f-41be-8ac8-9e93605c91d9}</Project>
+      <Name>S21Debug</Name>
     </ProjectReference>
     <ProjectReference Include="..\SwitchDemo\SwitchDemo.csproj">
       <Project>{00fe4cd4-2819-4782-a0c4-651805c973ca}</Project>

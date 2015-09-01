@@ -12,14 +12,22 @@ namespace ZNE_100TL_Factory_Config
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            ZConfig.Run();
+        }
+    }
+
+    public class ZConfig
+    {
         static string __ipBak = "192.168.0.178";
         static string __ipCur = "192.168.0.178";            //当前IP
         static string __ip = "192.168.0.178";                 //设置IP
         static string __mark = "255.255.255.0";
         static string __gateway = "192.168.0.1";
-        static string __baud = "19200";                             
+        static string __baud = "19200";
 
-        static void Main(string[] args)
+        public static void Run()
         {
             Thread thrd = new Thread(new ThreadStart(ConfigIOProc), 0);
             thrd.Start();
