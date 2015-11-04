@@ -276,6 +276,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 
 	m_ccbSWType.AddString(L"POI");
 	m_ccbSWType.AddString(L"HUAWEI");
+	m_ccbSWType.AddString(L"HUAWEI_EXT");
 	//m_ccbSWType.SetCurSel(0);
 
 	//HINSTANCE hDLL;
@@ -689,6 +690,133 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"DET_2_2100");
 		m_ccbDet.AddString(L"DET_1_2600");
 		m_ccbDet.AddString(L"DET_2_2600");
+		m_ccbDet.SetCurSel(0);
+
+		MartrixSwitchDispose();
+		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
+
+		if (result != MATRIX_SWITCH_OK)
+		{
+			wchar_t tmp[10];
+			swprintf_s(tmp, L"Error Return Code = %d", result);
+			MessageBox(tmp);
+		}
+	}
+	else if (idx == 2)
+	{
+
+		for (size_t j = 0; j < 100; j++)
+		{
+			if (p_MyRadio[j] != NULL)
+				p_MyRadio[j]->EnableWindow(FALSE);
+		}
+
+		m_ccbTx1.ResetContent();
+		m_ccbTx1.AddString(L"1tx1to4501ant1                ") ;
+		m_ccbTx1.AddString(L"2tx1to4501ant2                ") ;
+		m_ccbTx1.AddString(L"3tx1to4502ant1                ") ;
+		m_ccbTx1.AddString(L"4tx1to4502ant2                ") ;
+		m_ccbTx1.AddString(L"5tx1to700lant1                 " ) ;
+		m_ccbTx1.AddString(L"6tx1to700lant2                 " ) ;
+		m_ccbTx1.AddString(L"7tx1to700hant1                ") ;
+		m_ccbTx1.AddString(L"8tx1to700hant2                ") ;
+		m_ccbTx1.AddString(L"9tx1to700aptant1            " ) ;
+		m_ccbTx1.AddString(L"10tx1to700aptant2          ") ;
+		m_ccbTx1.AddString(L"11tx1todd800ant1           ") ;
+		m_ccbTx1.AddString(L"12tx1todd800ant2           ") ;
+		m_ccbTx1.AddString(L"13tx1tocdma800ant1      ") ;
+		m_ccbTx1.AddString(L"14tx1tocdma800ant2      ") ;
+		m_ccbTx1.AddString(L"15tx1tocdma800ant1      ") ;
+		m_ccbTx1.AddString(L"16tx1tocdma800ant2      ") ;
+		m_ccbTx1.AddString(L"17tx1todcs1800ant1        ") ;
+		m_ccbTx1.AddString(L"18tx1todcs1800ant2        ") ;
+		m_ccbTx1.AddString(L"19tx1topcs1900ant1        ") ;
+		m_ccbTx1.AddString(L"20tx1topcs1900ant2        ") ;
+		m_ccbTx1.AddString(L"21tx1towcdma2100ant1 ") ;
+		m_ccbTx1.AddString(L"22tx1towcdma2100ant2 ") ;
+		m_ccbTx1.AddString(L"23tx1towcdma2600ant1 ") ;
+		m_ccbTx1.AddString(L"24tx1towcdma2600ant2 ") ;
+		m_ccbTx1.SetCurSel(0);
+
+		m_ccbTx2.ResetContent();
+		m_ccbTx2.AddString(L"1tx2to4501ant1               ");
+		m_ccbTx2.AddString(L"2tx2to4501ant2               ");
+		m_ccbTx2.AddString(L"3tx2to4502ant1               ");
+		m_ccbTx2.AddString(L"4tx2to4502ant2               ");
+		m_ccbTx2.AddString(L"5tx2to700lant1                " );
+		m_ccbTx2.AddString(L"6tx2to700lant2                " );
+		m_ccbTx2.AddString(L"7tx2to700hant1               ");
+		m_ccbTx2.AddString(L"8tx2to700hant2               ");
+		m_ccbTx2.AddString(L"9tx2to700aptant1           " );
+		m_ccbTx2.AddString(L"10tx2to700aptant2         ");
+		m_ccbTx2.AddString(L"11tx2todd800ant1          ");
+		m_ccbTx2.AddString(L"12tx2todd800ant2          ");
+		m_ccbTx2.AddString(L"13tx2tocdma800ant1     ");
+		m_ccbTx2.AddString(L"14tx2tocdma800ant2     ");
+		m_ccbTx2.AddString(L"15tx2tocdma800ant1     ");
+		m_ccbTx2.AddString(L"16tx2tocdma800ant2     ");
+		m_ccbTx2.AddString(L"17tx2todcs1800ant1       ");
+		m_ccbTx2.AddString(L"18tx2todcs1800ant2       ");
+		m_ccbTx2.AddString(L"19tx2topcs1900ant1       ");
+		m_ccbTx2.AddString(L"20tx2topcs1900ant2       ");
+		m_ccbTx2.AddString(L"21tx2towcdma2100ant1");
+		m_ccbTx2.AddString(L"22tx2towcdma2100ant2");
+		m_ccbTx2.AddString(L"23tx1towcdma2600ant1");
+		m_ccbTx2.AddString(L"24tx1towcdma2600ant2");
+		m_ccbTx2.SetCurSel(0);
+
+		m_ccbPim.ResetContent();
+		m_ccbPim.AddString(L"1pimant1of4501                ");
+		m_ccbPim.AddString(L"2pimant2of4501                ");
+		m_ccbPim.AddString(L"3pimant1of4502                ");
+		m_ccbPim.AddString(L"4pimant2of4502                ");
+		m_ccbPim.AddString(L"5pimant1of700l                 ");
+		m_ccbPim.AddString(L"6pimant2of700l                 ");
+		m_ccbPim.AddString(L"7pimant1of700h                ");
+		m_ccbPim.AddString(L"8pimant2of700h                ");
+		m_ccbPim.AddString(L"9pimant1of700apt            ");
+		m_ccbPim.AddString(L"10pimant2of700apt          ");
+		m_ccbPim.AddString(L"11pimant1ofdd800           ");
+		m_ccbPim.AddString(L"12pimant2ofdd800           ");
+		m_ccbPim.AddString(L"13pimant1ofcdma800      ");
+		m_ccbPim.AddString(L"14pimant2ofcdma800      ");
+		m_ccbPim.AddString(L"15pimant1ofgsm900        ");
+		m_ccbPim.AddString(L"16pimant2ofgsm900        ");
+		m_ccbPim.AddString(L"17pimant1ofdcs1800        ");
+		m_ccbPim.AddString(L"18pimant2ofdcs1800        ");
+		m_ccbPim.AddString(L"19pimant1ofpcs1900        ");
+		m_ccbPim.AddString(L"20pimant2ofpcs1900        ");
+		m_ccbPim.AddString(L"21pimant1ofwcdam2100 ");
+		m_ccbPim.AddString(L"22pimant2ofwcdma2100 ");
+		m_ccbPim.AddString(L"23pimant1oflte2600         ");
+		m_ccbPim.AddString(L"24pimant2oflte2600         ");
+		m_ccbPim.SetCurSel(0);
+
+		m_ccbDet.ResetContent();
+		m_ccbDet.AddString(L"1couptx1of4501               ");
+		m_ccbDet.AddString(L"2couptx2of4501               ");
+		m_ccbDet.AddString(L"3couptx1of4502               ");
+		m_ccbDet.AddString(L"4couptx2of4502               ");
+		m_ccbDet.AddString(L"5couptx1of700l                ");
+		m_ccbDet.AddString(L"6couptx2of700l                ");
+		m_ccbDet.AddString(L"7couptx1of700h               ");
+		m_ccbDet.AddString(L"8couptx2of700h               ");
+		m_ccbDet.AddString(L"9couptx1of700apt           ");
+		m_ccbDet.AddString(L"10couptx2of700apt         ");
+		m_ccbDet.AddString(L"11couptx1ofdd800          ");
+		m_ccbDet.AddString(L"12couptx2ofdd800          ");
+		m_ccbDet.AddString(L"13couptx1ofcdma800     ");
+		m_ccbDet.AddString(L"14couptx2ofcdma800     ");
+		m_ccbDet.AddString(L"15couptx1ofgsm900       ");
+		m_ccbDet.AddString(L"16couptx2ofgsm900       ");
+		m_ccbDet.AddString(L"17couptx1ofdcs1800       ");
+		m_ccbDet.AddString(L"18couptx2ofdcs1800       ");
+		m_ccbDet.AddString(L"19couptx1ofpcs1900       ");
+		m_ccbDet.AddString(L"20couptx2ofpcs1900       ");
+		m_ccbDet.AddString(L"21couptx1ofwcdma2100");
+		m_ccbDet.AddString(L"22couptx2ofwcdma2100");
+		m_ccbDet.AddString(L"23couptx1oflte2600        ");
+		m_ccbDet.AddString(L"24couptx2oflte2600        ");
 		m_ccbDet.SetCurSel(0);
 
 		MartrixSwitchDispose();

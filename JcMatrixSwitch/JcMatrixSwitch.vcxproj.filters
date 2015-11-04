@@ -39,6 +39,9 @@
     <ClInclude Include="switch_info_huawei.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="switch_info_hw_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

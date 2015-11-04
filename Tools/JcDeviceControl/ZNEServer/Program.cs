@@ -10,16 +10,11 @@ namespace ZNEServer
     class Program
     {
         static void Main(string[] args)
-        { 
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5000);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5001);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5002);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5003);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5004);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5005);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5006);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5007);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 5008);
+        {
+            for (int i = 5000; i < 5020; i++)
+            {
+                ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), i);
+            }
 
             ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), 3003);
             while (true) ;
