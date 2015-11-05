@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "JcMatrixSwitchDemo.h"
 #include "JcMatrixSwitchDemoDlg.h"
+#include "DialogSwitch.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -63,6 +64,9 @@ void CJcMatrixSwitchDemoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO6, m_ccbDet);
 	DDX_Control(pDX, IDC_BUTTON2, m_ccbCommit);
 	DDX_Control(pDX, IDC_COMBO7, m_ccbSWType);
+	DDX_Control(pDX, IDC_BUTTON1, m_btnSwitch);
+	DDX_Control(pDX, IDC_COMBO1, m_cbbSwitch2);
+	DDX_Control(pDX, IDC_COMBO8, m_cbbSwitchIdx);
 }
 
 BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
@@ -112,6 +116,12 @@ BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
 	ON_BN_CLICKED(IDS_RADIO38, OnMyRadio38)
 	ON_BN_CLICKED(IDS_RADIO39, OnMyRadio39)
 	ON_BN_CLICKED(IDS_RADIO40, OnMyRadio40)
+	ON_BN_CLICKED(IDS_RADIO80, OnMyRadio80)
+	ON_BN_CLICKED(IDS_RADIO81, OnMyRadio81)
+	//ON_BN_CLICKED(IDS_RADIO82, OnMyRadio82)
+	//ON_BN_CLICKED(IDS_RADIO83, OnMyRadio83)
+	//ON_BN_CLICKED(IDS_RADIO84, OnMyRadio84)
+	//ON_BN_CLICKED(IDS_RADIO85, OnMyRadio85)
 	ON_CBN_SELCHANGE(IDC_COMBO2, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo2)
 	ON_CBN_SELCHANGE(IDC_COMBO3, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo3)
 	ON_CBN_SELCHANGE(IDC_COMBO4, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo4)
@@ -119,6 +129,7 @@ BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
 	ON_CBN_SELCHANGE(IDC_COMBO6, &CJcMatrixSwitchDemoDlg::OnSelchangeCombo6)
 	ON_BN_CLICKED(IDC_BUTTON2, &CJcMatrixSwitchDemoDlg::OnClickedButton2)
 	ON_CBN_SELCHANGE(IDC_COMBO7, &CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7)
+	ON_BN_CLICKED(IDC_BUTTON1, &CJcMatrixSwitchDemoDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 // CJcMatrixSwitchDemoDlg message handlers
@@ -165,15 +176,17 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO1, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO2, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO3, CRect(x + 100, y + 40, x + 140, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP1, CRect(x + 10, y + 20, x + 150, y + 65), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO80, CRect(x + 140, y + 40, x + 180, y + 60), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP1, CRect(x + 10, y + 20, x + 190, y + 65), 0);
 	}
 	//信号源开关2
 	{
-		int x = 200, y = 100;
+		int x = 240, y = 100;
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO4, CRect(x + 20, y + 40, x + 60, y + 60), WS_GROUP);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO5, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO6, CRect(x + 100, y + 40, x + 140, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP2, CRect(x + 10, y + 20, x + 150, y + 65), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO81, CRect(x + 140, y + 40, x + 180, y + 60), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP2, CRect(x + 10, y + 20, x + 190, y + 65), 0);
 	}
 	//收信开关
 	{
@@ -207,7 +220,9 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO8, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO9, CRect(x + 100, y + 40, x + 140, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO10, CRect(x + 140, y + 40, x + 180, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP3, CRect(x + 10, y + 20, x + 190, y + 65), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO82, CRect(x + 180, y + 40, x + 220, y + 60), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO83, CRect(x + 220, y + 40, x + 260, y + 60), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP3, CRect(x + 10, y + 20, x + 270, y + 65), 0);
 	}
 	//功放开关2
 	{
@@ -216,7 +231,9 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO12, CRect(x + 60, y + 40, x + 100, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO13, CRect(x + 100, y + 40, x + 140, y + 60), 0);
 		p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO14, CRect(x + 140, y + 40, x + 180, y + 60), 0);
-		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 190, y + 65), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO84, CRect(x + 180, y + 40, x + 220, y + 60), 0);
+		//p_MyRadio[btIdx++] = NewMyRadio(IDS_RADIO85, CRect(x + 220, y + 40, x + 260, y + 60), 0);
+		p_MyGroup[grp++] = NewMyGroup(IDS_GROUP4, CRect(x + 10, y + 20, x + 270, y + 65), 0);
 	}
 
 	{
@@ -277,6 +294,8 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	m_ccbSWType.AddString(L"POI");
 	m_ccbSWType.AddString(L"HUAWEI");
 	m_ccbSWType.AddString(L"HUAWEI_EXT");
+
+	m_btnSwitch.EnableWindow(FALSE);
 	//m_ccbSWType.SetCurSel(0);
 
 	//HINSTANCE hDLL;
@@ -423,7 +442,12 @@ void CJcMatrixSwitchDemoDlg::OnMyRadio37(){SwitchManual(ID_SW11_SDT2,1);}
 void CJcMatrixSwitchDemoDlg::OnMyRadio38(){SwitchManual(ID_SW11_SDT2,2);}
 void CJcMatrixSwitchDemoDlg::OnMyRadio39(){SwitchManual(ID_SW12_SDT2,1);}
 void CJcMatrixSwitchDemoDlg::OnMyRadio40(){SwitchManual(ID_SW12_SDT2,2);}
-
+void CJcMatrixSwitchDemoDlg::OnMyRadio80(){SwitchManual(ID_SW1_SDT3, 4); }
+void CJcMatrixSwitchDemoDlg::OnMyRadio81(){ SwitchManual(ID_SW2_SDT3, 4); }
+//void CJcMatrixSwitchDemoDlg::OnMyRadio82(){ SwitchManual(ID_SW1_SDT3, 5); }
+//void CJcMatrixSwitchDemoDlg::OnMyRadio83(){ SwitchManual(ID_SW2_SDT3, 6); }
+//void CJcMatrixSwitchDemoDlg::OnMyRadio84(){ SwitchManual(ID_SW1_SDT3, 5); }
+//void CJcMatrixSwitchDemoDlg::OnMyRadio85(){ SwitchManual(ID_SW2_SDT3, 6); }
 
 void CJcMatrixSwitchDemoDlg::OnSelchangeCombo2()
 {
@@ -511,6 +535,11 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 {
 	// TODO: Add your control notification handler code here
 	int idx = m_ccbSWType.GetCurSel();
+
+	m_btnSwitch.EnableWindow(TRUE);
+
+	m_cbbSwitch2.ResetContent();
+	m_cbbSwitchIdx.ResetContent();
 	
 	if (idx == 0)
 	{		
@@ -819,8 +848,44 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"24couptx2oflte2600        ");
 		m_ccbDet.SetCurSel(0);
 
+		m_cbbSwitch.ResetContent();
+		m_cbbSwitch.AddString(L"Signalswich                 ");
+		m_cbbSwitch.AddString(L"Paspecumpwmt         ");
+		m_cbbSwitch.AddString(L"PaspecumpwmtP       ");
+		m_cbbSwitch.AddString(L"Testmdlte700             ");
+		m_cbbSwitch.AddString(L"Testmddd800             ");
+		m_cbbSwitch.AddString(L"Testmdgsm900          ");
+		m_cbbSwitch.AddString(L"Testmddcs1800         ");
+		m_cbbSwitch.AddString(L"Testmdpcs1900         ");
+		m_cbbSwitch.AddString(L"Testmdwcdma2100  ");
+		m_cbbSwitch.AddString(L"Testmdlte2600           ");
+		m_cbbSwitch.AddString(L"Testmd4501               ");
+		m_cbbSwitch.AddString(L"Testmd4502               ");
+		m_cbbSwitch.AddString(L"Testmd700h               ");
+		m_cbbSwitch.AddString(L"Testmd700apt            ");
+		m_cbbSwitch.AddString(L"Testmd800cdma        ");
+		m_cbbSwitch.SetCurSel(0);
+
+		m_cbbSwitch2.ResetContent();
+		m_cbbSwitch2.AddString(L"Switch1  ");
+		m_cbbSwitch2.AddString(L"Switch2  ");
+		m_cbbSwitch2.AddString(L"Switch3  ");
+		m_cbbSwitch2.AddString(L"Switch4  ");
+		m_cbbSwitch2.AddString(L"Switch5  ");
+		m_cbbSwitch2.AddString(L"Switch6  ");
+		m_cbbSwitch2.AddString(L"Switch7  ");
+		m_cbbSwitch2.AddString(L"Switch8  ");
+		m_cbbSwitch2.AddString(L"Switch9  ");
+		m_cbbSwitch2.AddString(L"Switch10");
+		m_cbbSwitch2.AddString(L"Switch11");
+		m_cbbSwitch2.AddString(L"Switch12");
+		m_cbbSwitch2.AddString(L"Switch13");
+		m_cbbSwitch2.AddString(L"Switch14");
+		m_cbbSwitch2.AddString(L"Switch15");
+		m_cbbSwitch2.SetCurSel(0);
+
 		MartrixSwitchDispose();
-		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
+		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI_EXT12, COMM_TYPE_TCP);
 
 		if (result != MATRIX_SWITCH_OK)
 		{
@@ -828,5 +893,36 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 			swprintf_s(tmp, L"Error Return Code = %d", result);
 			MessageBox(tmp);
 		}
+	}
+
+	m_cbbSwitchIdx.ResetContent();
+	m_cbbSwitchIdx.AddString(L"1  ");
+	m_cbbSwitchIdx.AddString(L"2  ");
+	m_cbbSwitchIdx.AddString(L"3  ");
+	m_cbbSwitchIdx.AddString(L"4  ");
+	m_cbbSwitchIdx.AddString(L"5  ");
+	m_cbbSwitchIdx.AddString(L"6  ");
+	m_cbbSwitchIdx.AddString(L"7  ");
+	m_cbbSwitchIdx.SetCurSel(0);
+}
+
+
+void CJcMatrixSwitchDemoDlg::OnBnClickedButton1()
+{
+	//CDialogSwitch dlg(this, m_ccbSWType.GetCurSel());
+	//dlg.DoModal();
+	// TODO: Add your control notification handler code here
+
+	int a = m_cbbSwitch.GetCurSel() + 1;
+	int b = m_cbbSwitch2.GetCurSel() + 1;
+	int c = m_cbbSwitchIdx.GetCurSel() + 1;
+
+	int result = MartrixSwitchExcute(a, b, c);
+
+	if (result != MATRIX_SWITCH_OK)
+	{
+		wchar_t tmp[10];
+		swprintf_s(tmp, L"Error Return Code = %d", result);
+		MessageBox(tmp);
 	}
 }

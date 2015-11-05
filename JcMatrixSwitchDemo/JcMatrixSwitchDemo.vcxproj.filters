@@ -36,6 +36,9 @@
     <ClInclude Include="JcMatrixSwitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DialogSwitch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JcMatrixSwitchDemo.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogSwitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

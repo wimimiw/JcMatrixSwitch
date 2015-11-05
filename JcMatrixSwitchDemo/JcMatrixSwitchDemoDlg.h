@@ -86,6 +86,9 @@ protected:
 	afx_msg void OnMyRadio38();
 	afx_msg void OnMyRadio39();
 	afx_msg void OnMyRadio40();
+
+	afx_msg void OnMyRadio80();
+	afx_msg void OnMyRadio81();
 	
 	DECLARE_MESSAGE_MAP()
 public:
@@ -103,4 +106,8 @@ public:
 	afx_msg void OnClickedButton2();
 	CComboBox m_ccbSWType;
 	afx_msg void OnCbnSelchangeCombo7();
+	afx_msg void OnBnClickedButton1();
+	CButton m_btnSwitch;
+	CComboBox m_cbbSwitch2;
+	CComboBox m_cbbSwitchIdx;
 };
