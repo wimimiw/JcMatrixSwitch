@@ -538,6 +538,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 
 	m_btnSwitch.EnableWindow(TRUE);
 
+	m_cbbSwitch.ResetContent();
 	m_cbbSwitch2.ResetContent();
 	m_cbbSwitchIdx.ResetContent();
 	
@@ -721,6 +722,32 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"DET_2_2600");
 		m_ccbDet.SetCurSel(0);
 
+		m_cbbSwitch.ResetContent();
+		m_cbbSwitch.AddString(L"Signalswich                 ");
+		m_cbbSwitch.AddString(L"Paspecumpwmt         ");
+		m_cbbSwitch.AddString(L"Testmdlte700             ");
+		m_cbbSwitch.AddString(L"Testmddd800             ");
+		m_cbbSwitch.AddString(L"Testmdgsm900          ");
+		m_cbbSwitch.AddString(L"Testmddcs1800         ");
+		m_cbbSwitch.AddString(L"Testmdpcs1900         ");
+		m_cbbSwitch.AddString(L"Testmdwcdma2100  ");
+		m_cbbSwitch.AddString(L"Testmdlte2600           ");
+		m_cbbSwitch.SetCurSel(0);
+
+		m_cbbSwitch2.ResetContent();
+		m_cbbSwitch2.AddString(L"SW1_Signal1swich              ");
+		m_cbbSwitch2.AddString(L"SW2_Signal2swich              ");
+		m_cbbSwitch2.AddString(L"SW3_PA1swich1                 ");
+		m_cbbSwitch2.AddString(L"SW4_PA1swich2                 ");
+		m_cbbSwitch2.AddString(L"SW5_PA2swich1                 ");
+		m_cbbSwitch2.AddString(L"SW6_PA2swich2                 ");
+		m_cbbSwitch2.AddString(L"SW7_Spectrumswich       ");
+		m_cbbSwitch2.AddString(L"SW8_Powermeterswich  ");
+		m_cbbSwitch2.AddString(L"SW9_Couplerswich            ");
+		m_cbbSwitch2.AddString(L"SW10_Pimswich                    ");
+		m_cbbSwitch2.AddString(L"SW11_Txoutswich				");
+		m_cbbSwitch2.SetCurSel(0);
+
 		MartrixSwitchDispose();
 		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
 
@@ -867,22 +894,22 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_cbbSwitch.SetCurSel(0);
 
 		m_cbbSwitch2.ResetContent();
-		m_cbbSwitch2.AddString(L"Switch1  ");
-		m_cbbSwitch2.AddString(L"Switch2  ");
-		m_cbbSwitch2.AddString(L"Switch3  ");
-		m_cbbSwitch2.AddString(L"Switch4  ");
-		m_cbbSwitch2.AddString(L"Switch5  ");
-		m_cbbSwitch2.AddString(L"Switch6  ");
-		m_cbbSwitch2.AddString(L"Switch7  ");
-		m_cbbSwitch2.AddString(L"Switch8  ");
-		m_cbbSwitch2.AddString(L"Switch9  ");
-		m_cbbSwitch2.AddString(L"Switch10");
-		m_cbbSwitch2.AddString(L"Switch11");
-		m_cbbSwitch2.AddString(L"Switch12");
-		m_cbbSwitch2.AddString(L"Switch13");
-		m_cbbSwitch2.AddString(L"Switch14");
-		m_cbbSwitch2.AddString(L"Switch15");
-		m_cbbSwitch2.SetCurSel(0);
+		m_cbbSwitch2.AddString(L"SW1_Signal1swich              ");
+		m_cbbSwitch2.AddString(L"SW2_Signal2swich              ");
+		m_cbbSwitch2.AddString(L"SW3_Powermeterswich1  ");
+		m_cbbSwitch2.AddString(L"SW4_Spectrumswich1       ");
+		m_cbbSwitch2.AddString(L"SW5_PA1swich1                 ");
+		m_cbbSwitch2.AddString(L"SW6_PA1swich2                 ");
+		m_cbbSwitch2.AddString(L"SW7_PA2swich1                 ");
+		m_cbbSwitch2.AddString(L"SW8_PA2swich2                 ");
+		m_cbbSwitch2.AddString(L"SW9_Powermeterswich2  ");
+		m_cbbSwitch2.AddString(L"SW10_Spectrumswich2       ");
+		m_cbbSwitch2.AddString(L"SW11_PA3swich1                 ");
+		m_cbbSwitch2.AddString(L"SW12_PA3swich2                 ");
+		m_cbbSwitch2.AddString(L"SW13_Couplerswich            ");
+		m_cbbSwitch2.AddString(L"SW14_Pimswich                    ");
+		m_cbbSwitch2.AddString(L"SW15_Txoutswich				");
+		m_cbbSwitch2.SetCurSel(0);				
 
 		MartrixSwitchDispose();
 		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI_EXT12, COMM_TYPE_TCP);
