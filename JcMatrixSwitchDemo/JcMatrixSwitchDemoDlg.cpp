@@ -522,12 +522,12 @@ void CJcMatrixSwitchDemoDlg::OnClickedButton2()
 
 	int result = MartrixSwitchBoxExcute(a, b, c, d);
 
-	if (result != MATRIX_SWITCH_OK)
-	{
-		wchar_t tmp[10];
-		swprintf_s(tmp, L"Error Return Code = %d", result);
-		MessageBox(tmp);
-	}
+	//if (result != MATRIX_SWITCH_OK)
+	//{
+	//	wchar_t tmp[100];
+	//	swprintf_s(tmp, L"Error Return Code = %d", result);
+	//	MessageBox(tmp);
+	//}
 }
 
 
