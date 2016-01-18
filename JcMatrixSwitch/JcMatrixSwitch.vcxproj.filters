@@ -42,6 +42,9 @@
     <ClInclude Include="switch_info_hw_ext12.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="switch_info_hw_ext8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

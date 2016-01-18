@@ -53,7 +53,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;JCMATRIXSWITCH_EXPORTS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -91,6 +91,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="switch_info_huawei.h" />
     <ClInclude Include="switch_info_hw_ext12.h" />
+    <ClInclude Include="switch_info_hw_ext8.h" />
     <ClInclude Include="switch_info_poi.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
