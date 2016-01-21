@@ -49,6 +49,8 @@
 #define ID_CHAN_TX1_2100_2      (11)
 #define ID_CHAN_TX1_2600_1      (12)
 #define ID_CHAN_TX1_2600_2      (13)
+#define ID_CHAN_TX1_1500_1      (14)
+#define ID_CHAN_TX1_1500_2      (15)
 //TX2通道序号
 #define ID_CHAN_TX2_700_1		(0 )
 #define ID_CHAN_TX2_700_2       (1 )
@@ -64,6 +66,8 @@
 #define ID_CHAN_TX2_2100_2      (11)
 #define ID_CHAN_TX2_2600_1      (12)
 #define ID_CHAN_TX2_2600_2      (13)
+#define ID_CHAN_TX1_1500_1      (14)
+#define ID_CHAN_TX1_1500_2      (15)
 //PIM通道序号
 #define ID_CHAN_PIM_700_1		(0 )
 #define ID_CHAN_PIM_700_2       (1 )
@@ -79,6 +83,8 @@
 #define ID_CHAN_PIM_2100_2      (11)
 #define ID_CHAN_PIM_2600_1      (12)
 #define ID_CHAN_PIM_2600_2      (13)
+#define ID_CHAN_PIM_1500_1      (14)
+#define ID_CHAN_PIM_1500_2      (15)
 //DET通道序号
 #define ID_CHAN_DET_700_1		(0 )
 #define ID_CHAN_DET_700_2       (1 )
@@ -94,6 +100,8 @@
 #define ID_CHAN_DET_2100_2      (11)
 #define ID_CHAN_DET_2600_1      (12)
 #define ID_CHAN_DET_2600_2      (13)
+#define ID_CHAN_DET_1500_1      (14)
+#define ID_CHAN_DET_1500_2      (15)
 /**********************************************************/
 /*POI DEFINE*/
 #define ID_SW1_SDT3			(1)   //开关类型1 ：操作范围<1~3>

@@ -670,6 +670,8 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx1.AddString(L"TX1_2_2100");
 		m_ccbTx1.AddString(L"TX1_1_2600");
 		m_ccbTx1.AddString(L"TX1_2_2600");
+		m_ccbTx1.AddString(L"TX1_1_1500");
+		m_ccbTx1.AddString(L"TX1_2_1500");
 		m_ccbTx1.SetCurSel(0);
 
 		m_ccbTx2.ResetContent();
@@ -687,6 +689,8 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx2.AddString(L"TX2_2_2100");
 		m_ccbTx2.AddString(L"TX2_1_2600");
 		m_ccbTx2.AddString(L"TX2_2_2600");
+		m_ccbTx2.AddString(L"TX2_1_1500");
+		m_ccbTx2.AddString(L"TX2_2_1500");
 		m_ccbTx2.SetCurSel(0);
 
 		m_ccbPim.ResetContent();
@@ -704,6 +708,8 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbPim.AddString(L"PIM_2_2100");
 		m_ccbPim.AddString(L"PIM_1_2600");
 		m_ccbPim.AddString(L"PIM_2_2600");
+		m_ccbPim.AddString(L"PIM_1_1500");
+		m_ccbPim.AddString(L"PIM_2_1500");
 		m_ccbPim.SetCurSel(0);
 
 		m_ccbDet.ResetContent();
@@ -721,18 +727,21 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"DET_2_2100");
 		m_ccbDet.AddString(L"DET_1_2600");
 		m_ccbDet.AddString(L"DET_2_2600");
+		m_ccbDet.AddString(L"DET_1_1500");
+		m_ccbDet.AddString(L"DET_2_1500");
 		m_ccbDet.SetCurSel(0);
 
 		m_cbbSwitch.ResetContent();
-		m_cbbSwitch.AddString(L"Signalswich                 ");
-		m_cbbSwitch.AddString(L"Paspecumpwmt         ");
-		m_cbbSwitch.AddString(L"Testmdlte700             ");
-		m_cbbSwitch.AddString(L"Testmddd800             ");
-		m_cbbSwitch.AddString(L"Testmdgsm900          ");
-		m_cbbSwitch.AddString(L"Testmddcs1800         ");
-		m_cbbSwitch.AddString(L"Testmdpcs1900         ");
-		m_cbbSwitch.AddString(L"Testmdwcdma2100  ");
-		m_cbbSwitch.AddString(L"Testmdlte2600           ");
+		m_cbbSwitch.AddString(L"Signalswich");
+		m_cbbSwitch.AddString(L"Paspecumpwmt");
+		m_cbbSwitch.AddString(L"Testmdlte700");
+		m_cbbSwitch.AddString(L"Testmddd800");
+		m_cbbSwitch.AddString(L"Testmdgsm900");
+		m_cbbSwitch.AddString(L"Testmddcs1800");
+		m_cbbSwitch.AddString(L"Testmdpcs1900");
+		m_cbbSwitch.AddString(L"Testmdwcdma2100");
+		m_cbbSwitch.AddString(L"Testmdlte2600");
+		m_cbbSwitch.AddString(L"TestmdGpp1500");
 		m_cbbSwitch.SetCurSel(0);
 
 		m_cbbSwitch2.ResetContent();
