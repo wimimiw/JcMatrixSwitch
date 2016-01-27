@@ -560,6 +560,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_cbbSwitch.AddString(L"IP_Testmdfdd21");
 		m_cbbSwitch.AddString(L"IP_Testmdtdftda");
 		m_cbbSwitch.AddString(L"IP_Testmdtdd23");
+		m_cbbSwitch.AddString(L"IP_Testmdtdd26");
 		m_cbbSwitch.SetCurSel(0);
 
 		m_ccbTx1.ResetContent();
@@ -580,6 +581,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx1.AddString(L"15Cmtdetx1");
 		m_ccbTx1.AddString(L"16Cttdetx1");
 		m_ccbTx1.AddString(L"17null");
+		m_ccbTx1.AddString(L"18Cmtdetx1");
 		m_ccbTx1.SetCurSel(0);
 
 		m_ccbTx2.ResetContent();
@@ -600,6 +602,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx2.AddString(L"15Cmtdetx2");
 		m_ccbTx2.AddString(L"16null");
 		m_ccbTx2.AddString(L"17Cutdetx2");
+		m_ccbTx2.AddString(L"18Cmtdetx2");
 		m_ccbTx2.SetCurSel(0);
 
 		m_ccbPim.ResetContent();
@@ -620,6 +623,7 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbPim.AddString(L"15cmtde23pim");
 		m_ccbPim.AddString(L"16cttde23pim");
 		m_ccbPim.AddString(L"17null");
+		m_ccbPim.AddString(L"18cttdd26pim");
 		m_ccbPim.SetCurSel(0);
 
 		m_ccbDet.ResetContent();
@@ -634,6 +638,8 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"9tdftdacp3 ");
 		m_ccbDet.AddString(L"10tde23cp1  ");
 		m_ccbDet.AddString(L"11tde23cp2  ");
+		m_ccbDet.AddString(L"12tdd26cp1  ");
+		m_ccbDet.AddString(L"13tdd26cp2  ");
 		m_ccbDet.SetCurSel(0);
 
 		MartrixSwitchDispose();
