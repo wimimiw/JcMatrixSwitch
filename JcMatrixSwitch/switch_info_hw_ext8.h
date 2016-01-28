@@ -185,17 +185,17 @@
 "35=0,8,0,0,0,\n"\
 
 #define IMPLEMENT_STRING_HW_EXT8     "[ip]\n"\
-"Signalswich         =192.168.1.80\n"\
-"Paspecumpwmt       =192.168.1.81\n"\
-"PaspecumpwmtP       =192.168.1.90\n"\
-"Testmd800A          =192.168.1.61\n"\
-"Testmd800B          =192.168.1.62\n"\
-"Testmdpcs1900A      =192.168.1.63\n"\
-"Testmdpcs1900B      =192.168.1.64\n"\
-"Testmdlte2600A      =192.168.1.65\n"\
-"Testmdlte2600B      =192.168.1.66\n"\
-"Testmdlte2600C      =192.168.1.67\n"\
-"Testmdlte2600D      =192.168.1.68\n"\
+"Signalswich         =127.0.0.1:5000\n"\
+"Paspecumpwmt       =127.0.0.1:5001\n"\
+"PaspecumpwmtP       =127.0.0.1:5002\n"\
+"Testmd800A          =127.0.0.1:5003\n"\
+"Testmd800B          =127.0.0.1:5004\n"\
+"Testmdpcs1900A      =127.0.0.1:5005\n"\
+"Testmdpcs1900B      =127.0.0.1:5006\n"\
+"Testmdlte2600A      =127.0.0.1:5007\n"\
+"Testmdlte2600B      =127.0.0.1:5008\n"\
+"Testmdlte2600C      =127.0.0.1:5009\n"\
+"Testmdlte2600D      =127.0.0.1:5010\n"\
 "namelist=Signalswich,Paspecumpwmt,PaspecumpwmtP,Testmd800A,Testmd800B,Testmdpcs1900A,Testmdpcs1900B,Testmdlte2600A,Testmdlte2600B,Testmdlte2600C,Testmdlte2600D\n"\
 "[switch]\n"\
 "\n"\
