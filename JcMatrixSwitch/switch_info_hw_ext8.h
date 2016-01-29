@@ -332,14 +332,14 @@
 "6tx1to1900aant2 = Signal1swich(Signalswich,PA2in1), PA2swich1(Paspecumpwmt,md1900atx1),Txoutswich(Testmdpcs1900A,no2)\n"\
 "7tx1to1900bant1 = Signal1swich(Signalswich,PA2in1), PA2swich1(Paspecumpwmt,md1900btx1),Txoutswich(Testmdpcs1900B,nc1)\n"\
 "8tx1to1900bant2 = Signal1swich(Signalswich,PA2in1), PA2swich1(Paspecumpwmt,md1900btx1),Txoutswich(Testmdpcs1900B,no2)\n"\
-"9tx1to2600aant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600atx1),Txoutswich(Testmdlte2600A,nc1)\n"\
-"10tx1to2600aant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600atx1),Txoutswich(Testmdlte2600A,no2)\n"\
-"11tx1to2600bant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600btx1),Txoutswich(Testmdlte2600B,nc1)\n"\
-"12tx1to2600bant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600btx1),Txoutswich(Testmdlte2600B,no2)\n"\
-"13tx1to2600cant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600ctx1),Txoutswich(Testmdlte2600C,nc1)\n"\
-"14tx1to2600cant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600ctx1),Txoutswich(Testmdlte2600C,no2)\n"\
-"15tx1to2600dant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600dtx1),Txoutswich(Testmdlte2600D,nc1)\n"\
-"16tx1to2600dant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(Paspecumpwmt,md2600dtx1),Txoutswich(Testmdlte2600D,no2)\n"\
+"9tx1to2600aant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600atx1),Txoutswich(Testmdlte2600A,nc1)\n"\
+"10tx1to2600aant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600atx1),Txoutswich(Testmdlte2600A,no2)\n"\
+"11tx1to2600bant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600btx1),Txoutswich(Testmdlte2600B,nc1)\n"\
+"12tx1to2600bant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600btx1),Txoutswich(Testmdlte2600B,no2)\n"\
+"13tx1to2600cant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600ctx1),Txoutswich(Testmdlte2600C,nc1)\n"\
+"14tx1to2600cant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600ctx1),Txoutswich(Testmdlte2600C,no2)\n"\
+"15tx1to2600dant1 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600dtx1),Txoutswich(Testmdlte2600D,nc1)\n"\
+"16tx1to2600dant2 = Signal1swich(Signalswich,PA3in1), PA3swich1(PaspecumpwmtP,md2600dtx1),Txoutswich(Testmdlte2600D,no2)\n"\
 "namelist=1tx1to800aant1,2tx1to800aant2,3tx1to800bant1,4tx1to800bant2,5tx1to1900aant1,6tx1to1900aant2,7tx1to1900bant1,8tx1to1900bant2,9tx1to2600aant1,10tx1to2600aant2,11tx1to2600bant1,12tx1to2600bant2,13tx1to2600cant1,14tx1to2600cant2,15tx1to2600dant1,16tx1to2600dant2\n"\
 "\n"\
 "[actiontx2]\n"\
@@ -352,14 +352,14 @@
 "6tx2to1900aant2 = Signal2swich(Signalswich,PA2in2), PA2swich2(Paspecumpwmt,md1900atx2),Txoutswich(Testmdpcs1900A,no2)\n"\
 "7tx2to1900bant1 = Signal2swich(Signalswich,PA2in2), PA2swich2(Paspecumpwmt,md1900btx2),Txoutswich(Testmdpcs1900B,nc1)\n"\
 "8tx2to1900bant2 = Signal2swich(Signalswich,PA2in2), PA2swich2(Paspecumpwmt,md1900btx2),Txoutswich(Testmdpcs1900B,no2)\n"\
-"9tx2to2600aant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600atx2),Txoutswich(Testmdlte2600A,nc1)\n"\
-"10tx2to2600aant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600atx2),Txoutswich(Testmdlte2600A,no2)\n"\
-"11tx2to2600bant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600btx2),Txoutswich(Testmdlte2600B,nc1)\n"\
-"12tx2to2600bant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600btx2),Txoutswich(Testmdlte2600B,no2)\n"\
-"13tx2to2600cant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600ctx2),Txoutswich(Testmdlte2600C,nc1)\n"\
-"14tx2to2600cant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600ctx2),Txoutswich(Testmdlte2600C,no2)\n"\
-"15tx2to2600dant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600dtx2),Txoutswich(Testmdlte2600D,nc1)\n"\
-"16tx2to2600dant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(Paspecumpwmt,md2600dtx2),Txoutswich(Testmdlte2600D,no2)\n"\
+"9tx2to2600aant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600atx2),Txoutswich(Testmdlte2600A,nc1)\n"\
+"10tx2to2600aant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600atx2),Txoutswich(Testmdlte2600A,no2)\n"\
+"11tx2to2600bant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600btx2),Txoutswich(Testmdlte2600B,nc1)\n"\
+"12tx2to2600bant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600btx2),Txoutswich(Testmdlte2600B,no2)\n"\
+"13tx2to2600cant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600ctx2),Txoutswich(Testmdlte2600C,nc1)\n"\
+"14tx2to2600cant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600ctx2),Txoutswich(Testmdlte2600C,no2)\n"\
+"15tx2to2600dant1 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600dtx2),Txoutswich(Testmdlte2600D,nc1)\n"\
+"16tx2to2600dant2 = Signal2swich(Signalswich,PA3in2), PA3swich2(PaspecumpwmtP,md2600dtx2),Txoutswich(Testmdlte2600D,no2)\n"\
 "\n"\
 "[actionpim]\n"\
 "1pimant1of800a  = Spectrumswich1(Paspecumpwmt,md800apim), Pimswich (Testmd800A,nc1)\n"\
