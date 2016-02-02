@@ -17,10 +17,10 @@
 #define MATRIX_SWITCH_ERROR_CHAN_NO_EXIST		(-4)    //通道序号不存在
 #define MATRIX_SWITCH_EXCUTE_FAILED				(-1)    //开关操作执行失败
 
-#define MATRIX_CHAN_IDX_INVAID_1				(-10001)//通道1不合法
-#define MATRIX_CHAN_IDX_INVAID_2				(-10002)//通道2不合法
-#define MATRIX_CHAN_IDX_INVAID_3				(-10003)//通道3不合法
-#define MATRIX_CHAN_IDX_INVAID_4				(-10004)//通道4不合法
+#define MATRIX_CHAN_IDX_INVAID_1				(-10001)//通道1序号不合法
+#define MATRIX_CHAN_IDX_INVAID_2				(-10002)//通道2序号不合法
+#define MATRIX_CHAN_IDX_INVAID_3				(-10003)//通道3序号不合法
+#define MATRIX_CHAN_IDX_INVAID_4				(-10004)//通道4序号不合法
 //通信连接方式定义
 #define COMM_TYPE_TCP		(2)
 #define COMM_TYPE_UDP		(3)
@@ -126,24 +126,24 @@
 #define IP_Testmdtdd23      (7)
 #define IP_Testmdtdd26      (8)
 //POI-TX1 通道
-#define POI_IDX_1Cmgsmtx1			(0    )
-#define POI_IDX_2Cucdmatx1          (1    )
-#define POI_IDX_3Ctfd18tx1             (2    )
-#define POI_IDX_4Cufd18tx1            (3    )
-#define POI_IDX_5Ctfd21tx1             (4    )
-#define POI_IDX_6Cuw21tx1             (5    )
-#define POI_IDX_7Cmdcstx1             (6    )
-#define POI_IDX_8Cmtdftx1              (7    )
-#define POI_IDX_9null                        (8    )
-#define POI_IDX_10Cmtdetx1           (9   )
-#define POI_IDX_11Cttdetx1             (10 )
-#define POI_IDX_12null                      (11  )
-#define POI_IDX_13Cmtdftx1            (12 )
-#define POI_IDX_14null                      (13  )
-#define POI_IDX_15Cmtdetx1           (14 )
-#define POI_IDX_16Cttdetx1             (15 )
-#define POI_IDX_17null                      (16  )
-#define POI_IDX_18Cmtdetx1           (17 )
+#define POI_IDX_1Cmgsmtx1				(0    )
+#define POI_IDX_2Cucdmatx1				(1    )
+#define POI_IDX_3Ctfd18tx1				(2    )
+#define POI_IDX_4Cufd18tx1				(3    )
+#define POI_IDX_5Ctfd21tx1				(4    )
+#define POI_IDX_6Cuw21tx1				(5    )
+#define POI_IDX_7Cmdcstx1				(6    )
+#define POI_IDX_8Cmtdftx1				(7    )
+#define POI_IDX_9null                   (8    )
+#define POI_IDX_10Cmtdetx1				(9   )
+#define POI_IDX_11Cttdetx1				(10 )
+#define POI_IDX_12null                  (11  )
+#define POI_IDX_13Cmtdftx1				(12 )
+#define POI_IDX_14null                  (13  )
+#define POI_IDX_15Cmtdetx1				(14 )
+#define POI_IDX_16Cttdetx1				(15 )
+#define POI_IDX_17null                  (16  )
+#define POI_IDX_18Cmtdetx1				(17 )
 //POI-TX2 通道             
 #define POI_IDX_1Cmgsmtx2 			(0    )
 #define POI_IDX_2Cucdmatx2           (1    ) 
