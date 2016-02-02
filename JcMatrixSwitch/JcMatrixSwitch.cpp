@@ -115,7 +115,7 @@ int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
 	//if (result != MATRIX_SWITCH_OK)
 	//	return result;
 
-	result = cic->Excute() ? MATRIX_SWITCH_OK : MATRIX_SWITCH_EXCUTE_FAILED;
+	result |= cic->Excute() ? MATRIX_SWITCH_OK : MATRIX_SWITCH_EXCUTE_FAILED;
 
 	//if (__switchType == ID_POI)
 	//{
