@@ -200,10 +200,11 @@
 "PA2in2=2\n"\
 "PA3in2=3\n"\
 "PA4in2=4\n"\
-"PA2swich1    =fdd18tx1,fdd21tx1,tdftdatx1\n"\
+"PA2swich1    =fdd18tx1,fdd21tx1,tdftdatx1,pa2swich1_4\n"\
 "fdd18tx1=1\n"\
 "fdd21tx1=2\n"\
 "tdftdatx1=3\n"\
+"pa2swich1_4=4\n"\
 "PA2swich2    =fdd18tx2,fdd21tx2,tdftdatx2,tdftdatx3\n"\
 "fdd18tx2=1\n"\
 "fdd21tx2=2\n"\
