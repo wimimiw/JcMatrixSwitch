@@ -129,8 +129,13 @@ namespace ns_com_io_ctl
 		}  
 		return result;  
 	}  
-	//加载映射表
+	//加载映射表1
 	bool implementsetting::LoadMap(int type)
+	{
+		return LoadMap(type,NULL);
+	}
+	//加载映射表2
+	bool implementsetting::LoadMap(int type, wchar_t * cfgPath)
 	{
 		bool result = true;
 		string iopath = GetRunPath();

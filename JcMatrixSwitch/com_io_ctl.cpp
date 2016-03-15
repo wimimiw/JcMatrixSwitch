@@ -301,6 +301,13 @@ namespace ns_com_io_ctl{
 		return string(strBuff);	
 	}
 	//获取文件路径虚函数   未处理“\\”和“//”,Linux基类需要修改
+	wstring com_io_ctl::GetRunPathW()
+	{
+		wchar_t strBuff[MAX_PATH] = { 0 };
+		//GetCurrentDirectoryA(256,strBuff);  //危险
+		GetModuleFileName(GetModuleHandle(__dllHostNameW.c_str()), strBuff, MAX_PATH);
+		return wstring(strBuff);
+	}
 	string com_io_ctl::GetRunPath()
 	{
 		char strBuff[MAX_PATH] = { 0 };
