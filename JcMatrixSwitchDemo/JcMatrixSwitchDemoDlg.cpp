@@ -736,17 +736,17 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_cbbSwitch.SetCurSel(0);
 
 		m_cbbSwitch2.ResetContent();
-		m_cbbSwitch2.AddString(L"SW1_Signal1swich              ");
-		m_cbbSwitch2.AddString(L"SW2_Signal2swich              ");
-		m_cbbSwitch2.AddString(L"SW3_PA1swich1                 ");
-		m_cbbSwitch2.AddString(L"SW4_PA1swich2                 ");
-		m_cbbSwitch2.AddString(L"SW5_PA2swich1                 ");
-		m_cbbSwitch2.AddString(L"SW6_PA2swich2                 ");
-		m_cbbSwitch2.AddString(L"SW7_Spectrumswich       ");
-		m_cbbSwitch2.AddString(L"SW8_Powermeterswich  ");
-		m_cbbSwitch2.AddString(L"SW9_Couplerswich            ");
-		m_cbbSwitch2.AddString(L"SW10_Pimswich                    ");
-		m_cbbSwitch2.AddString(L"SW11_Txoutswich				");
+		m_cbbSwitch2.AddString(L"开关1|SW1_Signal1swich              ");
+		m_cbbSwitch2.AddString(L"开关2|SW2_Signal2swich              ");
+		m_cbbSwitch2.AddString(L"开关5|SW3_PA1swich1                 ");
+		m_cbbSwitch2.AddString(L"开关6|SW4_PA1swich2                 ");
+		m_cbbSwitch2.AddString(L"开关7|SW5_PA2swich1                 ");
+		m_cbbSwitch2.AddString(L"开关8|SW6_PA2swich2                 ");
+		m_cbbSwitch2.AddString(L"开关3|SW7_Spectrumswich       ");
+		m_cbbSwitch2.AddString(L"开关4|SW8_Powermeterswich  ");
+		m_cbbSwitch2.AddString(L"开关9|SW9_Couplerswich            ");
+		m_cbbSwitch2.AddString(L"开关10|SW10_Pimswich                    ");
+		m_cbbSwitch2.AddString(L"开关11|SW11_Txoutswich				");
 		m_cbbSwitch2.SetCurSel(0);
 
 		MartrixSwitchDispose();
