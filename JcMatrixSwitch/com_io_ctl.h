@@ -44,9 +44,12 @@ namespace ns_com_io_ctl{
 		virtual bool Reset(void);		
 		map<string, bool> __socketState;
 	private:	
-		bool __maskIO;				
+		bool __maskIO;	
+		// »º³å1
+		char __ioBuf1[100];
 		map<string,SOCKET> __socketClient;	
 		map<string,sockaddr_in> __addrRecver;
+		vector<string> __mAccpetHosts;
 		virtual void Delay(int mil);
 		virtual bool IOConnect(const string&host);
 		virtual bool IODisConnect(const string&host);
@@ -59,7 +62,8 @@ namespace ns_com_io_ctl{
 		virtual string GetTempFileInfo(const string& flagName);
 		USHORT GetCheckSum(LPBYTE lpBuff, DWORD dwSize);
 	public:
-		virtual~com_io_ctl(void);		
+		virtual~com_io_ctl(void);	
+		void SetAccpectHosts(char *hosts[],int size);
 	private:
 		virtual bool ResetOne(const string&host);
 		virtual bool IOConnectBegin(const string&host);
@@ -70,5 +74,6 @@ namespace ns_com_io_ctl{
 		void log(const string& info);
 		string logGetLastError();
 		wstring StringToWString(const string &str);
+		bool IsAcceptModule(const string&host);			
 	};
 }

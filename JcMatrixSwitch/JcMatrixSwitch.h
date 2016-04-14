@@ -414,6 +414,38 @@ extern int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det);
  */
 extern int MartrixSwitchExcute(int addr, int swId, int swIdx);
 /*******************************************************************************
+*函数名称：MartrixSwitchOpenAccpetMask
+*函数功能：矩阵开关箱屏蔽
+*参数说明：char *hosts[]     开关箱地址
+*		  int size			开关箱个数
+*			
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchOpenAccpetMask(char*hosts[],int size);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQClear
+*函数功能：矩阵开关箱组合清零
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQClear(int addr);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQAdd
+*函数功能：矩阵开关箱组合入队
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*			int swId	——开关类型序号	(ID_SW1_SDT3...)
+*			int swIdx	——开关引脚序号	(1~n)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQAdd(int addr, int swId, int swIdx);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQExcute
+*函数功能：矩阵开关箱组合操作
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQExcute(int addr);
+/*******************************************************************************
  *函数名称：MartrixSwitchDispose
  *函数功能：矩阵开关释放资源
  *返回类型：参照错误返回代码

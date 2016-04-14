@@ -55,6 +55,18 @@ int MartrixSwitchInit(int handle,char *dllName, int swType,int comType)
 	return result;
 }
 
+int MartrixSwitchOpenAccpetMask(char*hosts[], int size)
+{
+	if (__cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
+
+	__cic->SetAccpectHosts(hosts,size);
+
+	return MATRIX_SWITCH_OK;
+}
+
 int MartrixSwitchExcute(int addr, int swId, int swIdx)
 {
 	int result = MATRIX_SWITCH_OK;
@@ -67,6 +79,51 @@ int MartrixSwitchExcute(int addr, int swId, int swIdx)
 
 	cic->Clear();
 	cic->AddSwitchActionList(addr,swId,swIdx);
+
+	result = cic->Excute() ? MATRIX_SWITCH_OK : MATRIX_SWITCH_EXCUTE_FAILED;
+
+	return result;
+}
+
+int MartrixSwitchBoxQClear(int addr)
+{
+	int result = MATRIX_SWITCH_OK;
+	com_io_ctl *cic = __cic;
+
+	if (cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
+
+	cic->Clear();
+
+	return result;
+}
+
+int MartrixSwitchBoxQAdd(int addr, int swId, int swIdx)
+{
+	int result = MATRIX_SWITCH_OK;
+	com_io_ctl *cic = __cic;
+
+	if (cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
+
+	cic->AddSwitchActionList(addr, swId, swIdx);
+
+	return result;
+}
+
+int MartrixSwitchBoxQExcute(int addr)
+{
+	int result = MATRIX_SWITCH_OK;
+	com_io_ctl *cic = __cic;
+
+	if (cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
 
 	result = cic->Excute() ? MATRIX_SWITCH_OK : MATRIX_SWITCH_EXCUTE_FAILED;
 

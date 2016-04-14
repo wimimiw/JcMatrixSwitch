@@ -110,4 +110,14 @@ public:
 	CButton m_btnSwitch;
 	CComboBox m_cbbSwitch2;
 	CComboBox m_cbbSwitchIdx;
+	CComboBox m_ccbSwitchType2;
+	CEdit m_TestCnt;
+	CButton m_TestRun;
+	afx_msg void OnBnClickedButton4();
+	CStatic m_TestCntRefresh;
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	// 开关测试次数
+	int __SwitchTestCnt;
+	// 测试时隙
+	CEdit m_TestDelay;
 };

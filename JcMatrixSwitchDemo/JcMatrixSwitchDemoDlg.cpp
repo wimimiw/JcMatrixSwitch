@@ -50,6 +50,7 @@ END_MESSAGE_MAP()
 
 CJcMatrixSwitchDemoDlg::CJcMatrixSwitchDemoDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CJcMatrixSwitchDemoDlg::IDD, pParent)
+	, __SwitchTestCnt(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -67,6 +68,11 @@ void CJcMatrixSwitchDemoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON1, m_btnSwitch);
 	DDX_Control(pDX, IDC_COMBO1, m_cbbSwitch2);
 	DDX_Control(pDX, IDC_COMBO8, m_cbbSwitchIdx);
+	DDX_Control(pDX, IDC_COMBO9, m_ccbSwitchType2);
+	DDX_Control(pDX, IDC_EDIT1, m_TestCnt);
+	DDX_Control(pDX, IDC_BUTTON4, m_TestRun);
+	DDX_Control(pDX, IDC_STATIC1, m_TestCntRefresh);
+	DDX_Control(pDX, IDC_EDIT2, m_TestDelay);
 }
 
 BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
@@ -130,6 +136,8 @@ BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON2, &CJcMatrixSwitchDemoDlg::OnClickedButton2)
 	ON_CBN_SELCHANGE(IDC_COMBO7, &CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7)
 	ON_BN_CLICKED(IDC_BUTTON1, &CJcMatrixSwitchDemoDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON4, &CJcMatrixSwitchDemoDlg::OnBnClickedButton4)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 // CJcMatrixSwitchDemoDlg message handlers
@@ -295,6 +303,13 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	m_ccbSWType.AddString(L"HUAWEI");
 	m_ccbSWType.AddString(L"HUAWEI_EXT12");
 	m_ccbSWType.AddString(L"HUAWEI_EXT8");
+
+	m_ccbSwitchType2.AddString(L"JCSW-0710-01x");
+	m_ccbSwitchType2.AddString(L"JCSW-0710-02x");
+	m_ccbSwitchType2.AddString(L"JCSW-0710-02C(POI)");
+
+	m_TestCnt.SetWindowTextW(L"7000");
+	m_TestDelay.SetWindowTextW(L"400");
 
 	m_btnSwitch.EnableWindow(FALSE);
 	//m_ccbSWType.SetCurSel(0);
@@ -1081,4 +1096,148 @@ void CJcMatrixSwitchDemoDlg::OnBnClickedButton1()
 		swprintf_s(tmp, L"Error Return Code = %d", result);
 		MessageBox(tmp);
 	}
+}
+
+void CALLBACK TimeProc(
+	HWND hwnd,
+	UINT message,
+	UINT_PTR idTimer,
+	DWORD dwTime)
+{
+
+}
+
+void CJcMatrixSwitchDemoDlg::OnBnClickedButton4()
+{
+	// TODO: Add your control notification handler code here
+
+	//char*host[1] = { "" };
+
+	//if (m_ccbSwitchType2.GetCurSel() == 0)
+	//{
+	//	host[0] = { "127.0.0.1:5000" };
+	//}
+	//else if (m_ccbSwitchType2.GetCurSel() == 1)
+	//{
+	//	host[0] = { "127.0.0.1:5001" };
+	//}
+	//else if (m_ccbSwitchType2.GetCurSel() == 2)
+	//{
+	//	host[0] = { "127.0.0.1:5002" };
+	//}
+
+	//释放开关
+	MartrixSwitchDispose();
+
+	int result = MATRIX_SWITCH_OK;
+
+	if (m_ccbSwitchType2.GetCurSel() == 1)
+		result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI, COMM_TYPE_TCP);
+	else
+		result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI_EXT12, COMM_TYPE_TCP);
+
+	if (result != MATRIX_SWITCH_OK)
+	{
+		MessageBoxW(L"开关箱初始化失败！"); return;
+	}
+
+	//MartrixSwitchOpenAccpetMask(host,1);
+
+	CStringW btnTest;
+
+	m_TestRun.GetWindowTextW(btnTest);
+
+	if (btnTest.Compare(L"运行") == 0)
+	{
+		wchar_t buf[256];
+		int delay;
+		m_TestDelay.GetWindowTextW(buf, 256);
+		swscanf_s(buf, L"%d", &delay);
+
+		SetTimer(1, delay, NULL);
+		__SwitchTestCnt = 0;
+		m_TestRun.SetWindowTextW(L"停止");
+	}
+	else
+	{
+		KillTimer(1);
+		m_TestRun.SetWindowTextW(L"运行");
+	}	
+
+	//std::wstring strTemp;
+	//int testCnt = 0;
+
+	//std::thread thrd([&](){
+	//		
+	//		while (true)
+	//		{
+	//			std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	//			//MartrixSwitchBoxExcute(1, 1, 1, 1);
+	//			strTemp = std::to_wstring(testCnt++);
+
+	//			//GetDlgItem(IDC_STATIC1)->SetWindowTextW(strTemp.c_str());
+
+	//			if (testCnt > 50)break;
+	//		}
+	//	}
+	//);	
+
+	//thrd.detach();
+	//thrd.join();
+}
+
+
+void CJcMatrixSwitchDemoDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: Add your message handler code here and/or call default
+	int curIdx = __SwitchTestCnt;
+	int boxId = m_ccbSwitchType2.GetCurSel() + 1;
+	//-1
+	MartrixSwitchBoxQClear(boxId);
+	//-2
+	switch (boxId)
+	{
+	case 1:
+		MartrixSwitchBoxQAdd(boxId, 1, curIdx % 4 + 1);//SW1_Signal1swich
+		MartrixSwitchBoxQAdd(boxId, 2, curIdx % 4 + 1);//SW2_Signal2swich		
+		break;
+	case 2:
+		MartrixSwitchBoxQAdd(boxId, 7, curIdx % 7 + 1);//SW3_Powermeterswich1
+		MartrixSwitchBoxQAdd(boxId, 8, curIdx % 7 + 1);//SW4_Spectrumswich1
+		MartrixSwitchBoxQAdd(boxId, 3, curIdx % 3 + 1);//SW5_PA1swich1
+		MartrixSwitchBoxQAdd(boxId, 4, curIdx % 3 + 1);//SW6_PA1swich2
+		MartrixSwitchBoxQAdd(boxId, 5, curIdx % 3 + 1);//SW7_PA2swich1
+		MartrixSwitchBoxQAdd(boxId, 6, curIdx % 3 + 1);//SW8_PA2swich2
+		break;
+	case 3:
+		MartrixSwitchBoxQAdd(boxId, 9, curIdx % 6 + 1);//SW9_Powermeterswich2
+		MartrixSwitchBoxQAdd(boxId, 10,curIdx % 6 + 1);//SW10_Spectrumswich2
+		MartrixSwitchBoxQAdd(boxId, 7, curIdx % 6 + 1);//SW7_PA2swich1
+		MartrixSwitchBoxQAdd(boxId, 8, curIdx % 6 + 1);//SW8_PA2swich2
+		break;
+	default:
+
+		break;
+	}
+	//-3
+	MartrixSwitchBoxQExcute(boxId);
+
+	std::wstring strTemp = std::to_wstring(__SwitchTestCnt++);
+	
+	wchar_t buf[256];
+	int cnt;
+	m_TestCnt.GetWindowTextW(buf, 256);
+	swscanf_s(buf, L"%d", &cnt);
+
+	m_TestCntRefresh.SetWindowTextW(strTemp.c_str());
+
+	if (__SwitchTestCnt > cnt)
+	{
+		KillTimer(1);
+		MessageBoxW(L"测试完成！");
+		m_TestRun.SetWindowTextW(L"运行");
+		m_TestCntRefresh.SetWindowTextW(L"----");
+	}
+
+	CDialogEx::OnTimer(nIDEvent);
 }

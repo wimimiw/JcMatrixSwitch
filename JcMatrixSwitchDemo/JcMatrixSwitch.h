@@ -17,10 +17,10 @@
 #define MATRIX_SWITCH_ERROR_CHAN_NO_EXIST		(-4)    //通道序号不存在
 #define MATRIX_SWITCH_EXCUTE_FAILED				(-1)    //开关操作执行失败
 
-#define MATRIX_CHAN_IDX_INVAID_1				(-10001)//通道1不合法
-#define MATRIX_CHAN_IDX_INVAID_2				(-10002)//通道2不合法
-#define MATRIX_CHAN_IDX_INVAID_3				(-10003)//通道3不合法
-#define MATRIX_CHAN_IDX_INVAID_4				(-10004)//通道4不合法
+#define MATRIX_CHAN_IDX_INVAID_1				(-10001)//通道1序号不合法
+#define MATRIX_CHAN_IDX_INVAID_2				(-10002)//通道2序号不合法
+#define MATRIX_CHAN_IDX_INVAID_3				(-10003)//通道3序号不合法
+#define MATRIX_CHAN_IDX_INVAID_4				(-10004)//通道4序号不合法
 //通信连接方式定义
 #define COMM_TYPE_TCP		(2)
 #define COMM_TYPE_UDP		(3)
@@ -49,6 +49,8 @@
 #define ID_CHAN_TX1_2100_2      (11)
 #define ID_CHAN_TX1_2600_1      (12)
 #define ID_CHAN_TX1_2600_2      (13)
+#define ID_CHAN_TX1_1500_1      (14)
+#define ID_CHAN_TX1_1500_2      (15)
 //TX2通道序号
 #define ID_CHAN_TX2_700_1		(0 )
 #define ID_CHAN_TX2_700_2       (1 )
@@ -64,6 +66,8 @@
 #define ID_CHAN_TX2_2100_2      (11)
 #define ID_CHAN_TX2_2600_1      (12)
 #define ID_CHAN_TX2_2600_2      (13)
+#define ID_CHAN_TX1_1500_1      (14)
+#define ID_CHAN_TX1_1500_2      (15)
 //PIM通道序号
 #define ID_CHAN_PIM_700_1		(0 )
 #define ID_CHAN_PIM_700_2       (1 )
@@ -79,6 +83,8 @@
 #define ID_CHAN_PIM_2100_2      (11)
 #define ID_CHAN_PIM_2600_1      (12)
 #define ID_CHAN_PIM_2600_2      (13)
+#define ID_CHAN_PIM_1500_1      (14)
+#define ID_CHAN_PIM_1500_2      (15)
 //DET通道序号
 #define ID_CHAN_DET_700_1		(0 )
 #define ID_CHAN_DET_700_2       (1 )
@@ -94,6 +100,8 @@
 #define ID_CHAN_DET_2100_2      (11)
 #define ID_CHAN_DET_2600_1      (12)
 #define ID_CHAN_DET_2600_2      (13)
+#define ID_CHAN_DET_1500_1      (14)
+#define ID_CHAN_DET_1500_2      (15)
 /**********************************************************/
 /*POI DEFINE*/
 #define ID_SW1_SDT3			(1)   //开关类型1 ：操作范围<1~3>
@@ -116,52 +124,78 @@
 #define IP_Testmdfdd21      (5)
 #define IP_Testmdtdftda     (6)
 #define IP_Testmdtdd23      (7)
+#define IP_Testmdtdd26      (8)
 //POI-TX1 通道
-#define ID_1Cmgsmtx1        (0)
-#define ID_2Cucdmatx1       (1)
-#define ID_3Ctfd18tx1       (2)
-#define ID_4Cufd18tx1       (3)
-#define ID_5Ctfd21tx1       (4)
-#define ID_6Cuw21tx1        (5)
-#define ID_7Cmdcstx1        (6)
-#define ID_8Cmtdftx1        (7)
-#define ID_10Cmtdetx1       (9)
-#define ID_11Cttdetx1       (10)
-//POI-TX2 通道                     
-#define ID_1Cmgsmtx2        (0 )
-#define ID_2Cucdmatx2       (1 )
-#define ID_3Ctfd18tx2       (2 )
-#define ID_4Cufd18tx2       (3 )
-#define ID_5Ctfd21tx2       (4 )
-#define ID_6Cuw21tx2        (5 )
-#define ID_7Cmdcstx2        (6 )
-#define ID_8Cmtdftx2        (7 )
-#define ID_9Cmtdatx2        (8 )
-#define ID_10Cmtdetx2       (9 )
-#define ID_12Cutdetx2       (11)
+#define POI_IDX_1Cmgsmtx1				(0    )
+#define POI_IDX_2Cucdmatx1				(1    )
+#define POI_IDX_3Ctfd18tx1				(2    )
+#define POI_IDX_4Cufd18tx1				(3    )
+#define POI_IDX_5Ctfd21tx1				(4    )
+#define POI_IDX_6Cuw21tx1				(5    )
+#define POI_IDX_7Cmdcstx1				(6    )
+#define POI_IDX_8Cmtdftx1				(7    )
+#define POI_IDX_9null                   (8    )
+#define POI_IDX_10Cmtdetx1				(9   )
+#define POI_IDX_11Cttdetx1				(10 )
+#define POI_IDX_12null                  (11  )
+#define POI_IDX_13Cmtdftx1				(12 )
+#define POI_IDX_14null                  (13  )
+#define POI_IDX_15Cmtdetx1				(14 )
+#define POI_IDX_16Cttdetx1				(15 )
+#define POI_IDX_17null                  (16  )
+#define POI_IDX_18Cmtdetx1				(17 )
+//POI-TX2 通道             
+#define POI_IDX_1Cmgsmtx2 			(0    )
+#define POI_IDX_2Cucdmatx2           (1    ) 
+#define POI_IDX_3Ctfd18tx2             (2    )
+#define POI_IDX_4Cufd18tx2            (3    )
+#define POI_IDX_5Ctfd21tx2             (4    )
+#define POI_IDX_6Cuw21tx2             (5    )
+#define POI_IDX_7Cmdcstx2             (6    )
+#define POI_IDX_8Cmtdftx2              (7    )
+#define POI_IDX_9Cmtdatx2             (8    )
+#define POI_IDX_10Cmtdetx2           (9   )
+#define POI_IDX_11null                      (10 )
+#define POI_IDX_12Cutdetx2            (11  )
+#define POI_IDX_13Cmtdftx2            (12 )
+#define POI_IDX_14Cmtdatx2           (13  )
+#define POI_IDX_15Cmtdetx2		    (14 )
+#define POI_IDX_16null		                (15 )
+#define POI_IDX_17Cutdetx2		    (16  )
+#define POI_IDX_18Cmtdetx2		    (17 )
 //POI-RX 通道                      
-#define ID_1gsmpim 	        (0)
-#define ID_2cdmapim         (1)
-#define ID_3ctfd18pim       (2)
-#define ID_4cufd18pim       (3)
-#define ID_5ctfd21pim       (4)
-#define ID_6cuw21pim        (5)
-#define ID_7cmdcspim        (6)
-#define ID_8cmtdfpim        (7)
-#define ID_10cmtde23pim     (9)
-#define ID_11cttde23pim     (10)
+#define POI_IDX_1gsmpim    				(0    )
+#define POI_IDX_2cdmapim                  (1    )
+#define POI_IDX_3ctfd18pim                (2    )
+#define POI_IDX_4cufd18pim                (3    ) 
+#define POI_IDX_5ctfd21pim                (4    )
+#define POI_IDX_6cuw21pim                (5    )
+#define POI_IDX_7cmdcspim                (6    )
+#define POI_IDX_8cmtdfpim                 (7    )
+#define POI_IDX_9null                             (8    ) 
+#define POI_IDX_10cmtde23pim          (9   ) 
+#define POI_IDX_11cttde23pim            (10 ) 
+#define POI_IDX_12null                          (11  )
+#define POI_IDX_13cmtdfpim               (12 )
+#define POI_IDX_14null                          (13  )
+#define POI_IDX_15cmtde23pim          (14 ) 
+#define POI_IDX_16cttde23pim            (15 ) 
+#define POI_IDX_17null                          (16  )
+#define POI_IDX_18cttdd26pim           (17 )
 //POI-Coup 通道
-#define ID_1Cdmagsmcp1      (0 )
-#define ID_2Cdmagsmcp2      (1 )
-#define ID_3fdd18cp1        (2 )
-#define ID_4fdd18cp2        (3 )
-#define ID_5fdd21cp1        (4 )
-#define ID_6fdd21cp2        (5 )
-#define ID_7tdftdacp1       (6 )
-#define ID_8tdftdacp2       (7 )
-#define ID_9tdftdacp3       (8 )
-#define ID_10tde23cp1	    (9 )
-#define ID_11tde23cp2       (10)
+#define POI_IDX_1Cdmagsmcp1			(0    )
+#define POI_IDX_2Cdmagsmcp2          (1    )
+#define POI_IDX_3fdd18cp1                  (2    ) 
+#define POI_IDX_4fdd18cp2                   (3    )  
+#define POI_IDX_5fdd21cp1                  (4    ) 
+#define POI_IDX_6fdd21cp2                  (5    ) 
+#define POI_IDX_7tdftdacp1                 (6    )
+#define POI_IDX_8tdftdacp2                 (7    )
+#define POI_IDX_9tdftdacp3                  (8    ) 
+#define POI_IDX_10tde23cp1                (9   ) 
+#define POI_IDX_11tde23cp2                (10 ) 
+#define POI_IDX_12tdd26cp1               (11  )
+#define POI_IDX_13tdd26cp2               (12 )
 /**********************************************************/
 /*HUA WEI EXT12 DEFINE*/
 //TX1通道序号
@@ -373,12 +407,44 @@ extern int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det);
 /*******************************************************************************
 *函数名称：MartrixSwitchExcute
 *函数功能：矩阵开关单开关操作
-*参数说明：int addr	——模块地址
-*			int swId	——开关类型序号
-*			int swIdx	——开关引脚序号
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*			int swId	——开关类型序号	(ID_SW1_SDT3...)
+*			int swIdx	——开关引脚序号	(1~n)
 *返回类型：参照错误返回代码
 */
 extern int MartrixSwitchExcute(int addr, int swId, int swIdx);
+/*******************************************************************************
+*函数名称：MartrixSwitchOpenAccpetMask
+*函数功能：矩阵开关箱屏蔽
+*参数说明：char *hosts[]     开关箱地址
+*		  int size			开关箱个数
+*
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchOpenAccpetMask(char*hosts[], int size);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQClear
+*函数功能：矩阵开关箱组合清零
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQClear(int addr);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQAdd
+*函数功能：矩阵开关箱组合入队
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*			int swId	——开关类型序号	(ID_SW1_SDT3...)
+*			int swIdx	——开关引脚序号	(1~n)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQAdd(int addr, int swId, int swIdx);
+/*******************************************************************************
+*函数名称：MartrixSwitchBoxQExcute
+*函数功能：矩阵开关箱组合操作
+*参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxQExcute(int addr);
 /*******************************************************************************
 *函数名称：MartrixSwitchDispose
 *函数功能：矩阵开关释放资源

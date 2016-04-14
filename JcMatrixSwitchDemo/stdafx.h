@@ -50,6 +50,10 @@
 #endif
 #endif
 
+#include <thread>
+#include <functional>
+#include <string>
+
 #include "JcMatrixSwitch.h"
 #pragma comment(lib,"..\\Release\\JcMatrixSwitch.lib")
 
