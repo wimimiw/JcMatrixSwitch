@@ -148,22 +148,22 @@ int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
 
 	cic->Clear();
 
-	if (tx1 != ID_CHAN_IGNORE && tx1 < (int)nltx1.size())
+	if (tx1 > ID_CHAN_IGNORE && tx1 < (int)nltx1.size())
 		cic->SelChanTx1(nltx1[tx1]);
 	else if (tx1 >= (int)nltx1.size() || tx1 < ID_CHAN_IGNORE)
 		result = MATRIX_CHAN_IDX_INVAID_1;
 
-	if (tx2 != ID_CHAN_IGNORE && tx2 < (int)nltx2.size())
+	if (tx2 > ID_CHAN_IGNORE && tx2 < (int)nltx2.size())
 		cic->SelChanTx2(nltx2[tx2]);
 	else if (tx2 >= (int)nltx2.size() || tx2 < ID_CHAN_IGNORE)
 		result = MATRIX_CHAN_IDX_INVAID_2;
 
-	if (pim != ID_CHAN_IGNORE && pim <  (int)nlpim.size())
+	if (pim > ID_CHAN_IGNORE && pim <  (int)nlpim.size())
 		cic->SelChanPim(nlpim[pim]);
 	else if (pim >= (int)nlpim.size() || pim < ID_CHAN_IGNORE)
 		result = MATRIX_CHAN_IDX_INVAID_3;
 
-	if (det != ID_CHAN_IGNORE && det <  (int)nldet.size())
+	if (det > ID_CHAN_IGNORE && det <  (int)nldet.size())
 		cic->SelChanDet(nldet[det]);
 	else if (det >= (int)nldet.size() || det < ID_CHAN_IGNORE)
 		result = MATRIX_CHAN_IDX_INVAID_4;
