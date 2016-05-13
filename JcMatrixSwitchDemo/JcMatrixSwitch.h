@@ -405,6 +405,16 @@ extern int MartrixSwitchInit(int handle, char*dllName, int swType, int comType);
 */
 extern int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det);
 /*******************************************************************************
+*函数名称：MartrixSwitchBoxReset
+*函数功能：矩阵开组合通道操作(零帧序)
+*参数说明：int tx1	—— TX1通道序号
+*			int tx2 —— TX2通道序号
+*			int pim	—— PIM通道序号
+*			int det	—— DET通道序号
+*返回类型：参照错误返回代码
+*/
+extern int MartrixSwitchBoxReset(int tx1, int tx2, int pim, int det);
+/*******************************************************************************
 *函数名称：MartrixSwitchExcute
 *函数功能：矩阵开关单开关操作
 *参数说明：int addr	——模块地址			(1~n:只要模块支持相应的天关即可)

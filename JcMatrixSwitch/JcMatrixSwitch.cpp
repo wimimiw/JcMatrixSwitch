@@ -130,7 +130,7 @@ int MartrixSwitchBoxQExcute(int addr)
 	return result;
 }
 
-int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
+int MartrixSwitchBoxExcuteAD(int tx1, int tx2, int pim, int det)
 {
 	int result = MATRIX_SWITCH_OK;
 	com_io_ctl *cic = __cic;
@@ -181,6 +181,30 @@ int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
 	//}
 
 	return result;
+}
+
+int MartrixSwitchBoxExcute(int tx1, int tx2, int pim, int det)
+{
+	if (__cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
+
+	__cic->isZeroFrame = false;
+
+	return MartrixSwitchBoxExcuteAD(tx1, tx2, pim, det);
+}
+
+int MartrixSwitchBoxReset(int tx1, int tx2, int pim, int det)
+{
+	if (__cic == nullptr)
+	{
+		return MATRIX_SWITCH_ERROR_OBJECT_NULL;
+	}
+	
+	__cic->isZeroFrame = true;
+
+	return MartrixSwitchBoxExcuteAD(tx1,tx2,pim,det);	
 }
 
 int MartrixSwitchDispose()

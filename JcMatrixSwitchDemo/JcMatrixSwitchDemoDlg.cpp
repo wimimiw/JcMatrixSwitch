@@ -73,6 +73,7 @@ void CJcMatrixSwitchDemoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON4, m_TestRun);
 	DDX_Control(pDX, IDC_STATIC1, m_TestCntRefresh);
 	DDX_Control(pDX, IDC_EDIT2, m_TestDelay);
+	DDX_Control(pDX, IDC_CHECK1, m_CheckZero);
 }
 
 BEGIN_MESSAGE_MAP(CJcMatrixSwitchDemoDlg, CDialogEx)
@@ -531,12 +532,17 @@ void CJcMatrixSwitchDemoDlg::OnSelchangeCombo6()
 void CJcMatrixSwitchDemoDlg::OnClickedButton2()
 {
 	// TODO: Add your control notification handler code here
+	int result;
+
 	int a = m_ccbTx1.GetCurSel();
 	int b = m_ccbTx2.GetCurSel();
 	int c = m_ccbPim.GetCurSel();
 	int d = m_ccbDet.GetCurSel();
 
-	int result = MartrixSwitchBoxExcute(a, b, c, d);
+	if (m_CheckZero.GetCheck())
+		result = MartrixSwitchBoxReset(a, b, c, d);
+	else
+		result = MartrixSwitchBoxExcute(a, b, c, d);
 
 	//if (result != MATRIX_SWITCH_OK)
 	//{

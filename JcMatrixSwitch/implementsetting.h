@@ -28,6 +28,7 @@ namespace ns_com_io_ctl
 			bool state;
 			bool isOnline;		//ÊÇ·ñÔÚÏß
 		};
+		bool isZeroFrame;
 	private:
 		typedef vector<string> _tp_vs;
 

@@ -120,4 +120,5 @@ public:
 	int __SwitchTestCnt;
 	// ≤‚ ‘ ±œ∂
 	CEdit m_TestDelay;
+	CButton m_CheckZero;
 };
