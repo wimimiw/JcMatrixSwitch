@@ -29,7 +29,7 @@
 2016.1.26
 	兼容，当JcConfig.ini不存在模块时，会调用默认配置表中的模块测试本地地址
 *------------------------------------------------------------------------------*/
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "switch_info_poi.h"
 #include "switch_info_huawei.h"
 #include "switch_info_hw_ext8.h"

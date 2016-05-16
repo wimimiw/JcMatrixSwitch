@@ -15,7 +15,7 @@
 2015.5.4
 	在IOWrite中加入第一次连接
 *------------------------------------------------------------------------------*/
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "com_io_ctl.h"
 
 namespace ns_com_io_ctl{
