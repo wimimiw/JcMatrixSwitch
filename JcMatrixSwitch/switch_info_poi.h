@@ -318,8 +318,8 @@
 "tdd26cp1= Powermeterswich(PaspecumpwmtP,tdd26pwmt), Couplerswich2(Testmdtdd26,nc1)\n"\
 "tdd26cp2= Powermeterswich(PaspecumpwmtP,tdd26pwmt), Couplerswich2(Testmdtdd26,no2)\n"\
 "\n"\
-"lte700cp1=Powermeterswich(PaspecumpwmtP,lte700pwmt),  Couplerswich2(Testmdtdd26,nc1)\n"\
-"lte700cp2=Powermeterswich(PaspecumpwmtP,lte700pwmt),  Couplerswich2(Testmdtdd26,no2)\n"\
+"lte700cp1=Powermeterswich(PaspecumpwmtP,lte700pwmt),  Couplerswich2(Testmdlte700p,nc1)\n"\
+"lte700cp2=Powermeterswich(PaspecumpwmtP,lte700pwmt),  Couplerswich2(Testmdlte700p,no2)\n"\
 "\n"\
 "pcs1900cp1=Powermeterswich(PaspecumpwmtP,pcs1900pwmt),  Couplerswich2(Testmdpcs1900p,nc1)\n"\
 "pcs1900cp2=Powermeterswich(PaspecumpwmtP,pcs1900pwmt),  Couplerswich2(Testmdpcs1900p,no2)\n"\
