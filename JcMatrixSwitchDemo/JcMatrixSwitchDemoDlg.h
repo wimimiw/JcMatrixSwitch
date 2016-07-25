@@ -23,7 +23,7 @@ public:
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	
-	CButton* NewMyRadio(int nID, CRect rect, int nStyle);
+	CButton* NewMyRadio(int nID, CRect rect, int nStyle,int dispidx);
 	CButton* NewMyGroup(int nID, CRect rect, int nStyle);
 	CButton *p_MyRadio[100];
 	CButton *p_MyGroup[100];
@@ -89,6 +89,16 @@ protected:
 
 	afx_msg void OnMyRadio80();
 	afx_msg void OnMyRadio81();
+	afx_msg void OnMyRadio82();
+	afx_msg void OnMyRadio83();
+	afx_msg void OnMyRadio84();
+	afx_msg void OnMyRadio85();
+	afx_msg void OnMyRadio100();
+	afx_msg void OnMyRadio101();
+	afx_msg void OnMyRadio102();
+	afx_msg void OnMyRadio103();
+	afx_msg void OnMyRadio104();
+	afx_msg void OnMyRadio105();
 	
 	DECLARE_MESSAGE_MAP()
 public:

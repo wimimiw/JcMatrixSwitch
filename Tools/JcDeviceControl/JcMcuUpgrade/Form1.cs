@@ -68,7 +68,7 @@ namespace JcMcuUpgrade
             //this.label1.BackColor = Color.Transparent;
             //this.label1.BringToFront();     
             this.toolStripStatusLabel1.Text = "";
-            this.cbbType.Items.AddRange(new string[] { "矩阵开关（以太网）", "矩阵开关（485）", "功放" });
+            this.cbbType.Items.AddRange(new string[] { "矩阵开关（以太网）", "矩阵开关（485）", "功放","信号源"});
             this.cbbCom.Items.AddRange(SerialPort.GetPortNames());
             this.Text = "等待中...";
         }
@@ -88,6 +88,12 @@ namespace JcMcuUpgrade
                 this.tbPort.Enabled = false;
             }
             else if (this.cbbType.SelectedIndex == 2)
+            {
+                this.cbbCom.Enabled = true;
+                this.tbIP.Enabled = false;
+                this.tbPort.Enabled = false;
+            }
+            else if (this.cbbType.SelectedIndex == 3)
             {
                 this.cbbCom.Enabled = true;
                 this.tbIP.Enabled = false;
@@ -295,6 +301,13 @@ namespace JcMcuUpgrade
                 if (this.cbbCom.Text.Equals("")) { MessageBox.Show(this, "请选择串口!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; };
                 __tComOper = new Uart();
                 __tComOper.open(this.cbbCom.Text, 9600, 2);
+                portName = this.cbbCom.Text;
+            }
+            else if (this.cbbType.SelectedIndex == 3)
+            {
+                if (this.cbbCom.Text.Equals("")) { MessageBox.Show(this, "请选择串口!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; };
+                __tComOper = new Uart();
+                __tComOper.open(this.cbbCom.Text, 38400, 2);
                 portName = this.cbbCom.Text;
             }
 
