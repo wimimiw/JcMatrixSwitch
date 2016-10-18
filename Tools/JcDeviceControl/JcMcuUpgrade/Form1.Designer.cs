@@ -123,14 +123,14 @@
             // 
             // nudAddr
             // 
-            this.nudAddr.Location = new System.Drawing.Point(80, 34);
+            this.nudAddr.Location = new System.Drawing.Point(158, 34);
             this.nudAddr.Maximum = new decimal(new int[] {
             64,
             0,
             0,
             0});
             this.nudAddr.Name = "nudAddr";
-            this.nudAddr.Size = new System.Drawing.Size(120, 23);
+            this.nudAddr.Size = new System.Drawing.Size(42, 23);
             this.nudAddr.TabIndex = 10;
             // 
             // label5
@@ -278,7 +278,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

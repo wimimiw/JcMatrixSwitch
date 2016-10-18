@@ -61,14 +61,9 @@ namespace JcMcuUpgrade
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //this.progressBar1.SendToBack();
-            //this.progressBar1.BackColor = Color.Transparent;
-            //this.label1.Parent = this.progressBar1;
-            //this.label1.BackColor = Color.Transparent;
-            //this.label1.BringToFront();     
+        {   
             this.toolStripStatusLabel1.Text = "";
-            this.cbbType.Items.AddRange(new string[] { "矩阵开关（以太网）", "矩阵开关（485）", "功放","信号源"});
+            this.cbbType.Items.AddRange(new string[] { "Ethernet", "RS485", "JCSG-0727-M2", "JCSG-0727-M2B" });
             this.cbbCom.Items.AddRange(SerialPort.GetPortNames());
             this.Text = "等待中...";
         }
@@ -124,6 +119,7 @@ namespace JcMcuUpgrade
                     MessageBox.Show(null, "下载指示失败！请检查是否端口被占用。", "WARING", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     this.Invoke(new MethodInvoker(delegate
                     {
+                        this.button1.Enabled = true;
                         this.Text = "等待中...";
                     }));
                     return;
@@ -149,7 +145,7 @@ namespace JcMcuUpgrade
                     __tComOper.open(portName,115200,2);
                 }
 
-                for (int i = 0; i < 0x7000; i+= DOW_SECTION_LEN)
+                for (int i = 0; i < fsBuf.Length; i += DOW_SECTION_LEN)
                 {
                     txBuf[0] = this.__addr;
                     txBuf[1] = (Byte)('F');
@@ -182,6 +178,7 @@ namespace JcMcuUpgrade
                             MessageBox.Show(null, "下载过程失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             this.Invoke(new MethodInvoker(delegate
                             {
+                                this.button1.Enabled = true;
                                 this.Text = "等待中...";
                             }));
                             return;
@@ -214,6 +211,7 @@ namespace JcMcuUpgrade
 
                     if (ack[1] != (Byte)'Y')
                     {
+                        this.button1.Enabled = true;
                         MessageBox.Show(null, "下载升级失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
@@ -262,6 +260,7 @@ namespace JcMcuUpgrade
                     }
                     else
                     {
+                        this.button1.Enabled = true;
                         MessageBox.Show(this, "下载升级失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
@@ -270,6 +269,7 @@ namespace JcMcuUpgrade
             }
             catch (Exception ex)
             {
+                this.button1.Enabled = true;
                 MessageBox.Show(null, ex.Message, "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -337,7 +337,7 @@ namespace JcMcuUpgrade
                 }
 
                 this.lblInfo.Text = "文件路径:"+this.binFile+"\n\r";
-                this.lblInfo.Text+= "文件信息:大小 = " + fsBuf.Length.ToString() + " KB  校验和 = 0x" + chk.ToString("X04");
+                this.lblInfo.Text+= "文件信息:大小 = " + fsBuf.Length.ToString() + " B  校验和 = 0x" + chk.ToString("X04");
             }
         }
     }
