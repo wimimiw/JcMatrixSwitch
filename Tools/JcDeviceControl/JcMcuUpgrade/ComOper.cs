@@ -5,6 +5,8 @@ using System.IO.Ports;
 using System.Net.Sockets;
 using System.Diagnostics;
 using System.Threading;
+using System.Net.Sockets;
+using System.Net;
 
 namespace JcMcuUpgrade
 {
@@ -120,7 +122,7 @@ namespace JcMcuUpgrade
         }
     }
 
-    public class Ethernet : ComOper
+    public class EtherTCP : ComOper
     {
         string __ip;
         int __port;
@@ -208,6 +210,97 @@ namespace JcMcuUpgrade
             {
                 __tcpClient.Close();
                 __tcpClient = null;
+            }
+        }
+    }
+
+    public class EtherUDP : ComOper
+    {
+        UdpClient __udpClient;
+        IPEndPoint __endPoint;
+
+        public override int ID
+        {
+            get
+            {
+                return 2;
+                //throw new NotImplementedException();
+            }
+            set
+            {
+                //throw new NotImplementedException();
+            }
+        }
+
+        public override void open()
+        {
+
+        }
+
+        public override void open(string ip, int port)
+        {
+            if (__udpClient == null) __udpClient = new UdpClient();
+
+            __endPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+        }
+
+        public override void open(string com, int baud, int Threshold)
+        {
+
+        }
+
+        public override int read(Byte[] buffer, int offset, int count, int timeout)
+        {
+            int result = 0;
+
+            try
+            {
+                ManualResetEvent signal = new ManualResetEvent(false);                
+
+                IAsyncResult iar = this.__udpClient.BeginReceive(new AsyncCallback(delegate
+                {
+                    //闭包中更新标志
+                    signal.Set();
+                }), null);
+
+                result = signal.WaitOne(timeout)?0:-1;
+
+                if (result==0)
+                {
+                    byte[] buf = this.__udpClient.EndReceive(iar, ref __endPoint);
+                    Array.Copy(buf, 0, buffer, 0, count);
+                }
+            }
+            catch
+            {
+                result = -1;
+            }
+
+            return result;
+        }
+
+        public override int write(Byte[] buffer, int offset, int count)
+        {
+            int result = 0;
+
+            try
+            {
+                if (__udpClient != null)
+                    __udpClient.Send(buffer,count,__endPoint);
+            }
+            catch
+            {
+                result = -1;
+            }
+
+            return result;
+        }
+        public override void close()
+        {
+            if (__udpClient != null)
+            {
+                __udpClient.Close();
+                __udpClient = null;
             }
         }
     }

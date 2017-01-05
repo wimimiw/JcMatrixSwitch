@@ -99,5 +99,10 @@ namespace JcMcuUpgrade
             }
         }
         #endregion
+
+        private void labelVersion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

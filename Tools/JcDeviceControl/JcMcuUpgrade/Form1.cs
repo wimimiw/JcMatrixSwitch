@@ -68,32 +68,23 @@ namespace JcMcuUpgrade
             //this.label1.BackColor = Color.Transparent;
             //this.label1.BringToFront();     
             this.toolStripStatusLabel1.Text = "";
-            this.cbbType.Items.AddRange(new string[] { "矩阵开关（以太网）", "矩阵开关（485）", "功放","信号源"});
+            this.cbbType.Items.AddRange(new string[] { "EthernetTCP", "EthernetUDP","RS485", "JCSG-0727-M2","JCSG-0727-M2B"});
             this.cbbCom.Items.AddRange(SerialPort.GetPortNames());
             this.Text = "等待中...";
         }
 
         private void cbbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cbbType.SelectedIndex == 0)
+            if (this.cbbType.SelectedIndex == 0 || 
+                this.cbbType.SelectedIndex == 1)
             {
                 this.cbbCom.Enabled = false;
                 this.tbIP.Enabled = true;
                 this.tbPort.Enabled = true;
             }
-            else if (this.cbbType.SelectedIndex == 1)
-            {
-                this.cbbCom.Enabled = true;
-                this.tbIP.Enabled = false;
-                this.tbPort.Enabled = false;
-            }
-            else if (this.cbbType.SelectedIndex == 2)
-            {
-                this.cbbCom.Enabled = true;
-                this.tbIP.Enabled = false;
-                this.tbPort.Enabled = false;
-            }
-            else if (this.cbbType.SelectedIndex == 3)
+            else if (this.cbbType.SelectedIndex == 2 || 
+                     this.cbbType.SelectedIndex == 3 || 
+                     this.cbbType.SelectedIndex == 4)
             {
                 this.cbbCom.Enabled = true;
                 this.tbIP.Enabled = false;
@@ -124,6 +115,7 @@ namespace JcMcuUpgrade
                     MessageBox.Show(null, "下载指示失败！请检查是否端口被占用。", "WARING", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     this.Invoke(new MethodInvoker(delegate
                     {
+                        this.button1.Enabled = true;
                         this.Text = "等待中...";
                     }));
                     return;
@@ -149,7 +141,7 @@ namespace JcMcuUpgrade
                     __tComOper.open(portName,115200,2);
                 }
 
-                for (int i = 0; i < 0x7000; i+= DOW_SECTION_LEN)
+                for (int i = 0; i < fsBuf.Length; i+= DOW_SECTION_LEN)
                 {
                     txBuf[0] = this.__addr;
                     txBuf[1] = (Byte)('F');
@@ -182,6 +174,7 @@ namespace JcMcuUpgrade
                             MessageBox.Show(null, "下载过程失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             this.Invoke(new MethodInvoker(delegate
                             {
+                                this.button1.Enabled = true;
                                 this.Text = "等待中...";
                             }));
                             return;
@@ -208,12 +201,21 @@ namespace JcMcuUpgrade
                 Array.Clear(ack, 0, 2);
                 __tComOper.write(frame, 0, frame.Length);
 
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    this.Text = "下载完成，请勿断电！开始进行擦写...  需要6秒";
+                }));
+
                 if (__tComOper.ID == 0)
                 {
-                    __tComOper.read(ack, 0, (int)ack.Length, 3000);
+                    __tComOper.read(ack, 0, (int)ack.Length, 5000);
 
                     if (ack[1] != (Byte)'Y')
                     {
+                        this.Invoke(new MethodInvoker(delegate
+                        {
+                            this.button1.Enabled = true;
+                        }));
                         MessageBox.Show(null, "下载升级失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
@@ -228,9 +230,9 @@ namespace JcMcuUpgrade
                         }));
                     }
                 }
-                else if (__tComOper.ID == 1)
+                else if (__tComOper.ID == 1 || __tComOper.ID == 2)
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(6000);
 
                     Byte[] eACK = new Byte[5];
                     frame = new Byte[] { (Byte)(this.__addr), (Byte)'F', (Byte)'C', (Byte)'H', (Byte)'K' };
@@ -262,15 +264,25 @@ namespace JcMcuUpgrade
                     }
                     else
                     {
-                        MessageBox.Show(this, "下载升级失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.Invoke(new MethodInvoker(delegate
+                        {
+                            this.button1.Enabled = true;
+                        }));
+                        MessageBox.Show(null, "下载升级失败", "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }
-
-                __tComOper.close();
+                }                                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(null, ex.Message, "WARING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    __tComOper.close();
+                    this.button1.Enabled = true;
+                }));
             }
         }
 
@@ -286,24 +298,29 @@ namespace JcMcuUpgrade
 
             if (this.cbbType.SelectedIndex == 0)
             {
-                __tComOper = new Ethernet();
+                __tComOper = new EtherTCP();
                 __tComOper.open(this.tbIP.Text, int.Parse(this.tbPort.Text));
             }
             else if (this.cbbType.SelectedIndex == 1)
+            {
+                __tComOper = new EtherUDP();
+                __tComOper.open(this.tbIP.Text, int.Parse(this.tbPort.Text));
+            }
+            else if (this.cbbType.SelectedIndex == 2)
             {
                 if (this.cbbCom.Text.Equals("")) { MessageBox.Show(this, "请选择串口!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; };
                 __tComOper = new Uart();
                 __tComOper.open(this.cbbCom.Text, 19200, 2);
                 portName = this.cbbCom.Text;
             }
-            else if (this.cbbType.SelectedIndex == 2)
+            else if (this.cbbType.SelectedIndex == 3)
             {
                 if (this.cbbCom.Text.Equals("")) { MessageBox.Show(this, "请选择串口!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; };
                 __tComOper = new Uart();
                 __tComOper.open(this.cbbCom.Text, 9600, 2);
                 portName = this.cbbCom.Text;
             }
-            else if (this.cbbType.SelectedIndex == 3)
+            else if (this.cbbType.SelectedIndex == 4)
             {
                 if (this.cbbCom.Text.Equals("")) { MessageBox.Show(this, "请选择串口!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; };
                 __tComOper = new Uart();
@@ -337,7 +354,7 @@ namespace JcMcuUpgrade
                 }
 
                 this.lblInfo.Text = "文件路径:"+this.binFile+"\n\r";
-                this.lblInfo.Text+= "文件信息:大小 = " + fsBuf.Length.ToString() + " KB  校验和 = 0x" + chk.ToString("X04");
+                this.lblInfo.Text+= "文件信息:大小 = " + fsBuf.Length.ToString() + " B  校验和 = 0x" + chk.ToString("X04");
             }
         }
     }
