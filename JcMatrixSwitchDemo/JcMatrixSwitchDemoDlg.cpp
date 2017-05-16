@@ -725,6 +725,10 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx1.AddString(L"TX1_2_2600");
 		m_ccbTx1.AddString(L"TX1_1_1500");
 		m_ccbTx1.AddString(L"TX1_2_1500");
+		m_ccbTx1.AddString(L"TX1_1_800C");
+		m_ccbTx1.AddString(L"TX1_2_800C");
+		m_ccbTx1.AddString(L"TX1_1_900G");
+		m_ccbTx1.AddString(L"TX1_2_900G");
 		m_ccbTx1.SetCurSel(0);
 
 		m_ccbTx2.ResetContent();
@@ -744,6 +748,10 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbTx2.AddString(L"TX2_2_2600");
 		m_ccbTx2.AddString(L"TX2_1_1500");
 		m_ccbTx2.AddString(L"TX2_2_1500");
+		m_ccbTx2.AddString(L"TX2_1_800C");
+		m_ccbTx2.AddString(L"TX2_2_800C");
+		m_ccbTx2.AddString(L"TX2_1_900G");
+		m_ccbTx2.AddString(L"TX2_2_900G");
 		m_ccbTx2.SetCurSel(0);
 
 		m_ccbPim.ResetContent();
@@ -763,6 +771,10 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbPim.AddString(L"PIM_2_2600");
 		m_ccbPim.AddString(L"PIM_1_1500");
 		m_ccbPim.AddString(L"PIM_2_1500");
+		m_ccbPim.AddString(L"PIM_1_800C");
+		m_ccbPim.AddString(L"PIM_2_800C");
+		m_ccbPim.AddString(L"PIM_1_900G");
+		m_ccbPim.AddString(L"PIM_2_900G");
 		m_ccbPim.SetCurSel(0);
 
 		m_ccbDet.ResetContent();
@@ -782,6 +794,10 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_ccbDet.AddString(L"DET_2_2600");
 		m_ccbDet.AddString(L"DET_1_1500");
 		m_ccbDet.AddString(L"DET_2_1500");
+		m_ccbDet.AddString(L"DET_1_800C");
+		m_ccbDet.AddString(L"DET_2_800C");
+		m_ccbDet.AddString(L"DET_1_900G");
+		m_ccbDet.AddString(L"DET_2_900G");
 		m_ccbDet.SetCurSel(0);
 
 		m_cbbSwitch.ResetContent();
@@ -795,20 +811,26 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 		m_cbbSwitch.AddString(L"Testmdwcdma2100");
 		m_cbbSwitch.AddString(L"Testmdlte2600");
 		m_cbbSwitch.AddString(L"TestmdGpp1500");
+		m_cbbSwitch.AddString(L"Testmdcg8090");
 		m_cbbSwitch.SetCurSel(0);
 
 		m_cbbSwitch2.ResetContent();
-		m_cbbSwitch2.AddString(L"开关1|SW1_Signal1swich              ");
-		m_cbbSwitch2.AddString(L"开关2|SW2_Signal2swich              ");
-		m_cbbSwitch2.AddString(L"开关5|SW3_PA1swich1                 ");
-		m_cbbSwitch2.AddString(L"开关6|SW4_PA1swich2                 ");
-		m_cbbSwitch2.AddString(L"开关7|SW5_PA2swich1                 ");
-		m_cbbSwitch2.AddString(L"开关8|SW6_PA2swich2                 ");
-		m_cbbSwitch2.AddString(L"开关3|SW7_Spectrumswich       ");
-		m_cbbSwitch2.AddString(L"开关4|SW8_Powermeterswich  ");
-		m_cbbSwitch2.AddString(L"开关9|SW9_Couplerswich            ");
-		m_cbbSwitch2.AddString(L"开关10|SW10_Pimswich                    ");
-		m_cbbSwitch2.AddString(L"开关11|SW11_Txoutswich				");
+		m_cbbSwitch2.AddString(L"开关1|SW1_Signal1swich");
+		m_cbbSwitch2.AddString(L"开关2|SW2_Signal2swich");
+		m_cbbSwitch2.AddString(L"开关5|SW3_PA1swich1");
+		m_cbbSwitch2.AddString(L"开关6|SW4_PA1swich2");
+		m_cbbSwitch2.AddString(L"开关7|SW5_PA2swich1");
+		m_cbbSwitch2.AddString(L"开关8|SW6_PA2swich2");
+		m_cbbSwitch2.AddString(L"开关3|SW7_Spectrumswich");
+		m_cbbSwitch2.AddString(L"开关4|SW8_Powermeterswich");
+		m_cbbSwitch2.AddString(L"开关9|SW9_Couplerswich");
+		m_cbbSwitch2.AddString(L"开关10|SW10_Pimswich");
+		m_cbbSwitch2.AddString(L"开关11|SW11_Txoutswich");
+		m_cbbSwitch2.AddString(L"开关12|SW12_couplerswichCg8090");
+		m_cbbSwitch2.AddString(L"开关13|SW13_modeswich1Cg8090");
+		m_cbbSwitch2.AddString(L"开关14|SW14_modeswich2Cg8090");
+		m_cbbSwitch2.AddString(L"开关15|SW15_PimswichCg8090");
+		m_cbbSwitch2.AddString(L"开关16|SW16_TxoutswichCg8090");
 		m_cbbSwitch2.SetCurSel(0);
 
 		MartrixSwitchDispose();
