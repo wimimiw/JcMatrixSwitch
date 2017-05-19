@@ -392,9 +392,9 @@
 "\n"\
 "Gpp1500Btx2    = Signal2swich(Signalswich,PA4in2) , Txoutswich(Testmdpdc1500 ,no2)\n"\
 "\n"\
-"Cdma800Atx2    = Signal2swich(Signalswich,PA1in2) ,PA1swich2(Paspecumpwmt,MDgsm900tx2),   TxoutswichCg8090(Testmdcg8090 ,gsm900txA), modeswich1Cg8090(Testmdcg8090,nc1)\n"\
+"Cdma800Atx2    = Signal2swich(Signalswich,PA1in2) ,PA1swich2(Paspecumpwmt,MDgsm900tx2),   TxoutswichCg8090(Testmdcg8090 ,cdma800txA), modeswich1Cg8090(Testmdcg8090,nc1)\n"\
 "\n"\
-"Cdma800Btx2    = Signal2swich(Signalswich,PA1in2) ,PA1swich2(Paspecumpwmt,MDgsm900tx2),   TxoutswichCg8090(Testmdcg8090 ,gsm900txB), modeswich2Cg8090(Testmdcg8090,nc1)\n"\
+"Cdma800Btx2    = Signal2swich(Signalswich,PA1in2) ,PA1swich2(Paspecumpwmt,MDgsm900tx2),   TxoutswichCg8090(Testmdcg8090 ,cdma800txB), modeswich2Cg8090(Testmdcg8090,nc1)\n"\
 "\n"\
 "GSM9002Atx2    = Signal2swich(Signalswich,PA1in2) ,PA1swich2(Paspecumpwmt,MDgsm900tx2),   TxoutswichCg8090(Testmdcg8090 ,gsm900txA), modeswich1Cg8090(Testmdcg8090,no2)\n"\
 "\n"\
