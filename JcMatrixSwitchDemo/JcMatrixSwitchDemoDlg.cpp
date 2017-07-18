@@ -316,6 +316,7 @@ BOOL CJcMatrixSwitchDemoDlg::OnInitDialog()
 	m_ccbSWType.AddString(L"HUAWEI");
 	m_ccbSWType.AddString(L"HUAWEI_EXT12");
 	m_ccbSWType.AddString(L"HUAWEI_EXT8");
+	m_ccbSWType.AddString(L"JCIMA_DPX_SW01");
 
 	m_ccbSwitchType2.AddString(L"JCSW-0710-01x");
 	m_ccbSwitchType2.AddString(L"JCSW-0710-02x");
@@ -1125,6 +1126,71 @@ void CJcMatrixSwitchDemoDlg::OnCbnSelchangeCombo7()
 
 		MartrixSwitchDispose();
 		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_HUAWEI_EXT8, COMM_TYPE_TCP);
+
+		if (result != MATRIX_SWITCH_OK)
+		{
+			wchar_t tmp[10];
+			swprintf_s(tmp, L"Error Return Code = %d", result);
+			MessageBox(tmp);
+		}
+	}
+	else if (idx == 4)
+	{
+
+		for (size_t j = 0; j < 100; j++)
+		{
+			if (p_MyRadio[j] != NULL)
+				p_MyRadio[j]->EnableWindow(FALSE);
+		}
+
+		m_ccbTx1.ResetContent();
+		m_ccbTx1.AddString(L"1tx1toant1");
+		m_ccbTx1.AddString(L"2tx1toant2");
+		m_ccbTx1.AddString(L"3tx1toant3");
+		m_ccbTx1.AddString(L"4tx1toant4");
+		m_ccbTx1.AddString(L"5tx1toant5");
+		m_ccbTx1.AddString(L"6tx1toant6");
+		m_ccbTx1.AddString(L"7tx1tof1cal");
+		m_ccbTx1.SetCurSel(0);
+
+		m_ccbTx2.ResetContent();
+		m_ccbTx2.AddString(L"1tx2toant1");
+		m_ccbTx2.AddString(L"2tx2toant2");
+		m_ccbTx2.AddString(L"3tx2toant3");
+		m_ccbTx2.AddString(L"4tx2toant4");
+		m_ccbTx2.AddString(L"5tx2toant5");
+		m_ccbTx2.AddString(L"6tx2toant6");
+		m_ccbTx2.AddString(L"7tx2tof2cal");
+		m_ccbTx2.SetCurSel(0);
+
+		m_ccbPim.ResetContent();
+		m_ccbPim.AddString(L"1pimant1");
+		m_ccbPim.AddString(L"2pimant2");
+		m_ccbPim.AddString(L"3pimant3");
+		m_ccbPim.AddString(L"4pimant4");
+		m_ccbPim.AddString(L"5pimant5");
+		m_ccbPim.AddString(L"6pimant6");
+		m_ccbPim.SetCurSel(0);
+
+		m_ccbDet.ResetContent();
+		m_ccbDet.AddString(L"1couptx1");
+		m_ccbDet.AddString(L"2couptx2");
+		m_ccbDet.SetCurSel(0);
+
+		m_cbbSwitch.ResetContent();
+		m_cbbSwitch.AddString(L"SW01");
+		m_cbbSwitch.SetCurSel(0);
+
+		m_cbbSwitch2.ResetContent();
+		m_cbbSwitch2.AddString(L"SW1_Signal1swich");
+		m_cbbSwitch2.AddString(L"SW2_Signal2swich");
+		m_cbbSwitch2.AddString(L"SW13_Couplerswich");
+		m_cbbSwitch2.AddString(L"SW14_RXinswich");
+		m_cbbSwitch2.AddString(L"SW15_TXoutswich");
+		m_cbbSwitch2.SetCurSel(0);
+
+		MartrixSwitchDispose();
+		int result = MartrixSwitchInit(NULL, "JcMatrixSwitchDemo.exe", ID_DPX_SW01, COMM_TYPE_TCP);
 
 		if (result != MATRIX_SWITCH_OK)
 		{

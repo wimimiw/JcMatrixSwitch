@@ -30,6 +30,7 @@
 #define ID_POI				(2)
 #define ID_HUAWEI_EXT12    	(3)
 #define ID_HUAWEI_EXT8    	(4)
+#define ID_DPX_SW01    		(5)
 //∫ˆ¬‘Õ®µ¿…Ë÷√◊÷
 #define ID_CHAN_IGNORE		(-1)
 /**********************************************************/

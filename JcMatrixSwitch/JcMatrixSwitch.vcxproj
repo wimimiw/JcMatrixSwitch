@@ -90,6 +90,7 @@
     <ClInclude Include="com_io_ctl.h" />
     <ClInclude Include="implementsetting.h" />
     <ClInclude Include="JcMatrixSwitch.h" />
+    <ClInclude Include="switch_info_dpx_sw01.h" />
     <ClInclude Include="switch_info_huawei.h" />
     <ClInclude Include="switch_info_hw_ext12.h" />
     <ClInclude Include="switch_info_hw_ext8.h" />
